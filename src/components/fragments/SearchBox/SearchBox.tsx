@@ -4,19 +4,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CustomInput, SearchBoxContainer } from './SearchBox.styled'
 import { color } from '@helpers/styles';
 
-interface Interface_StyleProps {
-  isActive?: boolean,
-}
-
 const useStyles = makeStyles((theme) => ({
-  search_icon: (props: Interface_StyleProps) => ({
-    color: props.isActive ? color.bg.secondary : color.bg.light,
-  }),
+  searchBoxNormal: {
+    fill: color.bg.light,
+  },
+  searchBoxActive: {
+    fill: color.bg.secondary,
+  }
 }));
 
 const SearchBox = () => {
   const [isActive, setActive] = useState(false)
-  const classes = useStyles({ isActive })
+  const classes = useStyles()
 
   const onBlur = () => {
     setActive(false)
@@ -28,7 +27,7 @@ const SearchBox = () => {
 
   return (
     <SearchBoxContainer>
-      <SearchIcon className={classes.search_icon} />
+      <SearchIcon className={isActive ? classes.searchBoxActive : classes.searchBoxNormal} />
       <CustomInput
         placeholder="Search..."
         inputProps={{ 'aria-label': 'search' }}
