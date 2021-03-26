@@ -14,6 +14,15 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fill: color.bg.light,
   },
+  checkIconNormal: {
+    fill: color.text.light,
+  },
+  checkIconChecked: {
+    fill: color.text.black,
+  },
+}));
+
+const useInputStyles = makeStyles((theme) => ({
   root: {
     "& $notchedOutline": {
       borderColor: color.bg.light2,
@@ -27,16 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   focused: {},
   notchedOutline: {},
-  checkIconNormal: {
-    fill: color.text.light,
-  },
-  checkIconChecked: {
-    fill: color.text.black,
-  },
-}));
+}))
 
 const SortOptionsBox = () => {
   const classes = useStyles()
+  const inputClasses = useInputStyles(0)
   const [sortOptions, setSortOptions] = useState(0)
 
   const onChange = (event: ChangeEvent<{ value: unknown }>) => {
@@ -54,9 +58,9 @@ const SortOptionsBox = () => {
         variant="outlined"
         input={
           <OutlinedInput
-            name="age"
-            id="outlined-age-simple"
-            classes={classes}
+            name="sort-options"
+            id="sort-options"
+            classes={inputClasses}
           />
         }
         inputProps={{
@@ -87,7 +91,7 @@ const SortOptionsBox = () => {
       >
         <ListSubheader value={-1}>Sort Options</ListSubheader>
         {SORT_OPTIONS.map((option: string, index: number) => (
-          <MenuItem value={index}>
+          <MenuItem key={index} value={index}>
             <CheckIcon className={ sortOptions === index ? classes.checkIconChecked : classes.checkIconNormal } />
             {option}
           </MenuItem>

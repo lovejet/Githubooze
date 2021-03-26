@@ -14,6 +14,15 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fill: color.bg.light,
   },
+  checkIconNormal: {
+    fill: color.text.light,
+  },
+  checkIconChecked: {
+    fill: color.text.black,
+  },
+}));
+
+const useInputStyles = makeStyles((theme) => ({
   root: {
     "& $notchedOutline": {
       borderColor: color.bg.light2,
@@ -27,16 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   focused: {},
   notchedOutline: {},
-  checkIconNormal: {
-    fill: color.text.light,
-  },
-  checkIconChecked: {
-    fill: color.text.black,
-  },
-}));
+}))
 
 const ItemsPerPage = () => {
   const classes = useStyles()
+  const inputClasses = useInputStyles()
   const [itemsPerPage, setItemsPerPage] = useState(ITEMS_PER_PAGE[0])
 
   const onChange = (event: ChangeEvent<{ value: unknown }>) => {
@@ -54,9 +58,9 @@ const ItemsPerPage = () => {
         variant="outlined"
         input={
           <OutlinedInput
-            name="age"
-            id="outlined-age-simple"
-            classes={classes}
+            name="items-per-page"
+            id="items-per-page"
+            classes={inputClasses}
           />
         }
         inputProps={{
@@ -87,7 +91,7 @@ const ItemsPerPage = () => {
       >
         <ListSubheader value={-1}>Items per page</ListSubheader>
         {ITEMS_PER_PAGE.map((items_per_page: number, index: number) => (
-          <MenuItem value={items_per_page}>
+          <MenuItem key={index} value={items_per_page}>
             <CheckIcon className={ itemsPerPage === items_per_page ? classes.checkIconChecked : classes.checkIconNormal } />
             {items_per_page}
           </MenuItem>
