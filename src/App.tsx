@@ -1,26 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import SearchBox from '@components/SearchBox';
+import './App.css'
+import styled from 'styled-components'
+import { color } from '@helpers/styles'
+import Footer from '@components/Footer'
+import StylesGlobal from '@components/StylesGlobal'
+
+const AppContainer = styled.div`
+  background-color: ${color.bg.primary};
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <SearchBox />
-      </header>
-    </div>
+    <AppContainer>
+      <StylesGlobal />
+      <Footer />
+    </AppContainer>
   );
 }
 
