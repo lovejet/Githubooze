@@ -30,7 +30,6 @@ const SearchBox = () => {
       <SearchIcon className={isActive ? classes.searchBoxActive : classes.searchBoxNormal} />
       <CustomInput
         placeholder="Search..."
-        inputProps={{ 'aria-label': 'search' }}
         onBlur={onBlur}
         onClick={onClick}
       />

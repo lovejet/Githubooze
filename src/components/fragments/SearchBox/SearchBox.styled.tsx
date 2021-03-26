@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, spaceDt } from '@helpers/styles'
+import { color, getTypography, spaceDt } from '@helpers/styles'
 import { withStyles } from '@material-ui/core/styles'
 import { InputBase } from '@material-ui/core'
 import { toVW } from '@helpers/methods'
@@ -12,6 +12,7 @@ const SearchBoxContainer = styled.div`
   min-width: 60%;
 
   color: ${color.text.light};
+  ${getTypography('body-2')};
 `
 
 const CustomInput = withStyles({
@@ -22,6 +23,9 @@ const CustomInput = withStyles({
     '&:hover': {
       borderBottom: `1px solid ${color.bg.light3}`,
     },
+    font: 'inherit',
+    fontSize: 18,
+    lineHeight: 26,
   },
   input: {
     color: color.bg.light,

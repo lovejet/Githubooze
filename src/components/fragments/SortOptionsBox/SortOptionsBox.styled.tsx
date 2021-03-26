@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, spaceDt } from '@helpers/styles'
+import { color, getTypography, spaceDt } from '@helpers/styles'
 import { toVW } from '@helpers/methods'
 
 const SortOptionsBoxContainer = styled.div`
@@ -16,6 +16,8 @@ const SortOptionsBoxContainer = styled.div`
 const CustomSelectRender = styled.div`
   display: flex;
   flex-direction: row;
+
+  ${getTypography('body-2')};
 `
 
 const CustomSelectRenderPrefix = styled.div`
