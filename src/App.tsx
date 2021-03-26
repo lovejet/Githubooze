@@ -5,6 +5,7 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 import StylesGlobal from '@components/StylesGlobal'
 import NavBar from '@components/NavBar'
+import BottomBar from '@components/BottomBar'
 
 const AppContainer = styled.div`
   background-color: ${color.bg.primary};
@@ -15,6 +16,8 @@ const BodyContainer = styled.div`
   color: ${color.text.light};
   background-color: ${color.bg.black};
   padding: ${spaceDt(2)} ${spaceDt(3)};
+  
+  position: relative;
 `
 
 function App() {
@@ -25,6 +28,7 @@ function App() {
       <BodyContainer>
         <NavBar />
         {/* <GithubUsersList /> */}
+        <BottomBar />
       </BodyContainer>
       <Footer />
     </AppContainer>

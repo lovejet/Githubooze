@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import SearchBox from '@components/SearchBox'
 import SortOptionsBox from '@components/SortOptionsBox'
 import { NavBarContainer } from './NavBar.styled'
@@ -11,4 +12,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default memo(NavBar)
