@@ -4,8 +4,6 @@ import { screenMin, color, spaceDt, getTypography } from '@helpers/styles'
 import { toVW } from '@helpers/methods'
 
 const FooterContainer = styled.div`
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: ${toVW(30, 'desktop')};
   display: flex;

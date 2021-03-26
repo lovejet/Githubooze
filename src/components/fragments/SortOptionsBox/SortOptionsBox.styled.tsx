@@ -17,7 +17,7 @@ const CustomSelectRender = styled.div`
   display: flex;
   flex-direction: row;
 
-  ${getTypography('body-2')};
+  ${getTypography('body-3')};
 `
 
 const CustomSelectRenderPrefix = styled.div`

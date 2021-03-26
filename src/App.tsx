@@ -6,13 +6,18 @@ import Footer from '@components/Footer'
 import StylesGlobal from '@components/StylesGlobal'
 import NavBar from '@components/NavBar'
 import BottomBar from '@components/BottomBar'
+import GithubUsersList from '@components/GithubUsersList'
 
 const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: ${color.bg.primary};
 `
 
 const BodyContainer = styled.div`
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   color: ${color.text.light};
   background-color: ${color.bg.black};
   padding: ${spaceDt(2)} ${spaceDt(3)};
@@ -25,7 +30,7 @@ function App() {
       <Header />
       <BodyContainer>
         <NavBar />
-        {/* <GithubUsersList /> */}
+        <GithubUsersList />
         <BottomBar />
       </BodyContainer>
       <Footer />
