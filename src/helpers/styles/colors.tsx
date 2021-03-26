@@ -8,8 +8,10 @@ const color = {
   },
   bg: {
     primary: '#1E1E1E',
-    secondary: '#323A90',
+    secondary: '#467BEC',
     light: '#FFFFFF',
+    light2: '#FFFFFF70',
+    light3: '#FFFFFFC0',
     black: '#000',
     danger: '#FF0000',
   },
