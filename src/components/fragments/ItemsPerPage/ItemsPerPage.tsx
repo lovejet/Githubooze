@@ -3,11 +3,13 @@ import { ITEMS_PER_PAGE } from '@constants';
 import { color } from '@helpers/styles';
 import { ListSubheader, makeStyles, MenuItem, OutlinedInput, Select } from '@material-ui/core'
 import CheckIcon from '@material-ui/icons/Check'
-import { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix, CustomSelectRenderCount } from './ItemsPerPage.styled'
+import { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './ItemsPerPage.styled'
+import { toVW } from '@helpers/methods';
 
 const useStyles = makeStyles((theme) => ({
   select: {
     color: color.bg.light,
+    height: toVW(50, 'desktop'),
   },
   icon: {
     fill: color.bg.light,
@@ -35,18 +37,18 @@ const useStyles = makeStyles((theme) => ({
 
 const ItemsPerPage = () => {
   const classes = useStyles()
-  const [sortOptions, setSortOptions] = useState(0)
+  const [itemsPerPage, setItemsPerPage] = useState(ITEMS_PER_PAGE[0])
 
   const onChange = (event: ChangeEvent<{ value: unknown }>) => {
     const updatedSortOptions = event.target.value as number
     if(updatedSortOptions === -1) return
-    setSortOptions(updatedSortOptions)
+    setItemsPerPage(updatedSortOptions)
   }
 
   return (
     <ItemsPerPageBoxContainer>
       <Select
-        value={sortOptions}
+        value={itemsPerPage}
         onChange={onChange}
         className={classes.select}
         variant="outlined"
@@ -74,19 +76,19 @@ const ItemsPerPage = () => {
           getContentAnchorEl: null
         }}
         renderValue={(value: unknown) => {
-          const index = value as number
+          const items_per_page = value as number
           return (
             <CustomSelectRender>
               <CustomSelectRenderPrefix>Count: </CustomSelectRenderPrefix>
-              <CustomSelectRenderCount>{ITEMS_PER_PAGE[index]}</CustomSelectRenderCount>
+              {items_per_page}
             </CustomSelectRender>
           )
         }}
       >
         <ListSubheader value={-1}>Items per page</ListSubheader>
         {ITEMS_PER_PAGE.map((items_per_page: number, index: number) => (
-          <MenuItem value={index}>
-            <CheckIcon className={ sortOptions === index ? classes.checkIconChecked : classes.checkIconNormal } />
+          <MenuItem value={items_per_page}>
+            <CheckIcon className={ itemsPerPage === items_per_page ? classes.checkIconChecked : classes.checkIconNormal } />
             {items_per_page}
           </MenuItem>
         ))}

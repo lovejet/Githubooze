@@ -6,6 +6,7 @@ const ItemsPerPageBoxContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height: ${toVW(50, 'desktop')};
 
   color: ${color.text.light};
 `
@@ -20,9 +21,4 @@ const CustomSelectRenderPrefix = styled.div`
   margin-right: ${spaceDt(1)};
 `
 
-const CustomSelectRenderCount = styled.div`
-  text-align: end;
-  width: ${toVW(20, 'desktop')};
-`
-
-export { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix, CustomSelectRenderCount }
+export { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }

@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import { color, spaceDt } from '@helpers/styles'
 import { withStyles } from '@material-ui/core/styles'
 import { InputBase } from '@material-ui/core'
+import { toVW } from '@helpers/methods'
 
 const SearchBoxContainer = styled.div`
   display: flex;
   align-items: center;
+  height: ${toVW(50, 'desktop')};
   width: 60%;
   min-width: 60%;
 

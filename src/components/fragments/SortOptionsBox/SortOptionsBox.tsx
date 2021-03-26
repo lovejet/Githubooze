@@ -4,9 +4,11 @@ import { color } from '@helpers/styles';
 import { ListSubheader, makeStyles, MenuItem, OutlinedInput, Select } from '@material-ui/core'
 import CheckIcon from '@material-ui/icons/Check'
 import { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './SortOptionsBox.styled'
+import { toVW } from '@helpers/methods';
 
 const useStyles = makeStyles((theme) => ({
   select: {
+    height: toVW(50, 'desktop'),
     color: color.bg.light,
   },
   icon: {
