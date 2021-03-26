@@ -5,6 +5,7 @@ module.exports = function override(config) {
     alias: {
       ...config.alias,
       '@helpers': path.resolve(__dirname, 'src/helpers'),
+      '@components': path.resolve(__dirname, 'src/components'),
     },
   };
 	return config;
