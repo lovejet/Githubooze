@@ -14,7 +14,7 @@ const BodyContainer = styled.div`
   height: 100%;
   color: ${color.text.light};
   background-color: ${color.bg.black};
-  padding: ${spaceDt(2)} ${spaceDt(5)};
+  padding: ${spaceDt(2)} ${spaceDt(3)};
 `
 
 function App() {
