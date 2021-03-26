@@ -6,15 +6,18 @@ import { toVW } from '@helpers/methods'
 const FooterContainer = styled.div`
   position: absolute;
   bottom: 0;
-  right: 0;
-  margin-right: ${spaceDt(2)};
-  margin-bottom: ${spaceDt(1)};
+  width: 100%;
+  height: ${toVW(30, 'desktop')};
+  display: flex;
+  justify-content: flex-end;
+  background-color: ${color.bg.primary};
 `
 
 const CopyrightText = styled.div`
   display: flex;
-  color: ${color.text.secondary};
+  color: ${color.text.primary};
   align-items: center;
+  margin-right: ${spaceDt(1)};
 
   ${getTypography('body-3')};
 `

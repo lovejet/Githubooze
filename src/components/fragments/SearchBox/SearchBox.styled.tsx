@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import { color } from '@helpers/styles'
 
-const SearchBoxContainer = styled.div`
-  background-color: ${color.bg.black};
+const CustomInput = styled(({ ...otherProps }) => <input {...otherProps} />)`
+  color: ${color.text.light} !important;
+  border-color: ${color.bg.secondary} !important;
+
+  ::placeholder {
+    color: ${color.text.primary} !important;
+  }
 `
 
-export { SearchBoxContainer }
+export { CustomInput }

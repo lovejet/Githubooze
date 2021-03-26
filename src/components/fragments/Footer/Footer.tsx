@@ -1,12 +1,11 @@
 import { memo } from 'react'
 import { FooterContainer, CopyrightText, CopyRightVector } from './Footer.styled'
+import { APPLICATION_DEVELOPER } from '@constants'
 
-const Footer = () => {
-  return (
-    <FooterContainer>
-      <CopyrightText>Copyright<CopyRightVector />2021 All Rights Reserved by Lovejet</CopyrightText>
-    </FooterContainer>
-  )
-}
+const Footer = () => (
+  <FooterContainer>
+    <CopyrightText>Copyright<CopyRightVector />2021 All Rights Reserved by {APPLICATION_DEVELOPER}</CopyrightText>
+  </FooterContainer>
+)
 
 export default memo(Footer)

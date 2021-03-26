@@ -655,7 +655,7 @@ const Default = createGlobalStyle`
     --illustration-accent-1: ${color.bg.secondary};
     --illustration-accent-2: ${color.accent[2]};
     --illustration-accent-3: ${color.accent[1]};
-    --illustration-accent-4: ${color.text.secondary};
+    --illustration-accent-4: ${color.text.primary};
     --illustration-black: ${color.bg.black};
   }
 

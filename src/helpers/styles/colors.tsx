@@ -1,7 +1,7 @@
 const color = {
   text: {
-    primary: '#1E1E1E',
-    secondary: '#8894AC',
+    primary: '#8894AC',
+    secondary: '#1E1E1E',
     danger: '#FF0000',
     light: '#ffffff',
     black: '#000',
