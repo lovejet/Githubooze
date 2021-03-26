@@ -5,7 +5,7 @@ import { toVW } from '@helpers/methods'
 const ItemsPerPageBoxContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   height: ${toVW(50, 'desktop')};
 
   color: ${color.text.light};

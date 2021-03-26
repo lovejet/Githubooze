@@ -16,8 +16,6 @@ const BodyContainer = styled.div`
   color: ${color.text.light};
   background-color: ${color.bg.black};
   padding: ${spaceDt(2)} ${spaceDt(3)};
-  
-  position: relative;
 `
 
 function App() {

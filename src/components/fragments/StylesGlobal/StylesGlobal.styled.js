@@ -529,9 +529,6 @@ const Normalize = createGlobalStyle`
   th {
     font-weight: bold;
   }
-  li {
-    margin-bottom: calc(1.45rem / 2);
-  }
   ol li {
     padding-left: 0;
   }
