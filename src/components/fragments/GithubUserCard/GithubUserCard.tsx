@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { GithubUserCardContainer } from './GithubUserCard.styled'
 
 const GithubUserCard = () => {
@@ -8,4 +9,4 @@ const GithubUserCard = () => {
   )
 }
 
-export default GithubUserCard
+export default memo(GithubUserCard)

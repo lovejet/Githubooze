@@ -1,9 +1,11 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, memo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 import { Pagination, PaginationItem } from '@material-ui/lab'
 import { PaginationContainer } from './CustomPagination.styled'
 import { makeStyles } from '@material-ui/core'
 import { color } from '@helpers/styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectSearchQuery, setCurrentPage } from '@redux-reducers/search-query'
 
 const useStyles = makeStyles((theme) => ({
   ul: {
@@ -19,12 +21,13 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
-export default function CustomPagination({ pages }: InferProps<typeof CustomPagination.propTypes>) {
-  const [page, setPage] = useState(1)
+function CustomPagination ({ pages }: InferProps<typeof CustomPagination.propTypes>) {
   const classes = useStyles()
+  const dispatch = useDispatch()
+  const searchQuery = useSelector(selectSearchQuery)
 
   const onChange = (event: ChangeEvent<unknown>, value: number) => {
-    setPage(value)
+    dispatch(setCurrentPage(value))
   }
 
   return (
@@ -32,7 +35,7 @@ export default function CustomPagination({ pages }: InferProps<typeof CustomPagi
       <Pagination
         classes={{ul: classes.ul}}
         count={pages}
-        page={page}
+        page={searchQuery.currentPage}
         onChange={onChange} 
         renderItem={(item)=> <PaginationItem {...item} classes={{selected:classes.selected}} />} />
     </PaginationContainer>
@@ -42,3 +45,5 @@ export default function CustomPagination({ pages }: InferProps<typeof CustomPagi
 CustomPagination.propTypes = {
   pages: PropTypes.number.isRequired
 }
+
+export default memo(CustomPagination)

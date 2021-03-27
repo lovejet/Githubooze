@@ -7,7 +7,9 @@
         "@constants": ["./src/constants"],
         "@images/*": ["./src/images/*"],
         "@illustrations": ["./src/components/vectors/illustrations"],
-        "@fonts/*": ["./src/fonts/*"]
+        "@fonts/*": ["./src/fonts/*"],
+        "@redux-store": ["./src/redux/store"],
+        "@redux-reducers/*": ["./src/redux/reducers/*"],
       }
     }
   }
