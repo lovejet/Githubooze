@@ -7,17 +7,14 @@ import StylesGlobal from '@components/StylesGlobal'
 import NavBar from '@components/NavBar'
 import BottomBar from '@components/BottomBar'
 import GithubUsersList from '@components/GithubUsersList'
+import { toVW } from '@helpers/methods'
 
 const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   background-color: ${color.bg.primary};
 `
 
 const BodyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  height: calc(100% - ${toVW(100, 'desktop')});
   color: ${color.text.light};
   background-color: ${color.bg.black};
   padding: ${spaceDt(2)} ${spaceDt(3)};
