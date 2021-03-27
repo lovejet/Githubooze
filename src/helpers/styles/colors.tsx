@@ -2,7 +2,7 @@ const color = {
   text: {
     primary: '#8894AC',
     secondary: '#1E1E1E',
-    danger: '#FF0000',
+    danger: '#AA0000',
     light: '#ffffff',
     black: '#000',
   },

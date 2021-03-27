@@ -1,5 +1,6 @@
 export const APPLICATION_TITLE = 'Githubooze'
 export const APPLICATION_DEVELOPER = 'lovejet'
+export const API_GITHUG_USER_SEARCH_URL = 'https://api.github.com/search/users?q=%1&page=%2&per_page=%3&order=%4&sort=%5'
 export const SORT_OPTIONS = [
   {
     key: 'Best match',

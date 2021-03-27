@@ -1,5 +1,5 @@
 import { toVW } from '@helpers/methods'
-import { spaceDt } from '@helpers/styles'
+import { getTypography, spaceDt } from '@helpers/styles'
 import styled from 'styled-components'
 
 const GithubUsersListContainer = styled.div`
@@ -9,4 +9,11 @@ const GithubUsersListContainer = styled.div`
   margin-bottom: ${spaceDt(2)};
 `
 
-export { GithubUsersListContainer }
+const TotalUserCount = styled.div`
+  display: flex;
+  align-items: center;
+  height: ${toVW(25, 'desktop')};
+  ${getTypography('body-2')};
+`
+
+export { GithubUsersListContainer, TotalUserCount }
