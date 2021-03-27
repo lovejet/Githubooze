@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 export interface INTERFACE_SORT_OPTIONS {
+  index: number,
   key: string,
   o: string,
   s: string,

@@ -5,6 +5,7 @@ import { RootState } from '@redux-store'
 const initialState: INTERFACE_SEARCH_QUERY = {
   q: '',
   sortOptions: {
+    index: 0,
     key: 'Best match',
     o: 'desc',
     s: '',

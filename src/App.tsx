@@ -8,6 +8,9 @@ import NavBar from '@components/NavBar'
 import BottomBar from '@components/BottomBar'
 import GithubUsersList from '@components/GithubUsersList'
 import { toVW } from '@helpers/methods'
+import { useSelector } from 'react-redux'
+import { selectUserData } from '@redux-reducers/user-data'
+import UserInfo from '@components/UserInfo'
 
 const AppContainer = styled.div`
   background-color: ${color.bg.primary};
@@ -21,14 +24,23 @@ const BodyContainer = styled.div`
 `
 
 function App() {
+  const userData = useSelector(selectUserData)
+
   return (
     <AppContainer>
       <StylesGlobal />
       <Header />
       <BodyContainer>
-        <NavBar />
-        <GithubUsersList />
-        <BottomBar />
+        {!userData.data && (
+          <>
+            <NavBar />
+            <GithubUsersList />
+            <BottomBar />
+          </>
+        )}
+        {userData.data && (
+          <UserInfo />
+        )}
       </BodyContainer>
       <Footer />
     </AppContainer>

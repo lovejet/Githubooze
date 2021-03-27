@@ -6,8 +6,8 @@ import CheckIcon from '@material-ui/icons/Check'
 import { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './SortOptionsBox.styled'
 import { toVW } from '@helpers/methods'
 import { INTERFACE_SORT_OPTIONS } from '@helpers/types'
-import { useDispatch } from 'react-redux'
-import { setSortOptions } from '@redux-reducers/search-query'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectSearchQuery, setSortOptions } from '@redux-reducers/search-query'
 
 const useStyles = makeStyles((theme) => ({
   select: {
@@ -43,8 +43,9 @@ const useInputStyles = makeStyles((theme) => ({
 
 const SortOptionsBox = () => {
   const classes = useStyles()
-  const inputClasses = useInputStyles(0)
-  const [sortOptionsIndex, setSortOptionsIndex] = useState(0)
+  const searchQuery = useSelector(selectSearchQuery)
+  const inputClasses = useInputStyles()
+  const [sortOptionsIndex, setSortOptionsIndex] = useState(searchQuery.sortOptions.index)
   const dispatch = useDispatch()
 
   const onChange = (event: ChangeEvent<{ value: unknown }>) => {

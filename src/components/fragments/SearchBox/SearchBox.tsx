@@ -3,8 +3,8 @@ import SearchIcon from '@material-ui/icons/Search'
 import { makeStyles } from '@material-ui/core/styles'
 import { CustomInput, SearchBoxContainer } from './SearchBox.styled'
 import { color } from '@helpers/styles'
-import { useDispatch } from 'react-redux'
-import { setQuery } from '@redux-reducers/search-query'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectSearchQuery, setQuery } from '@redux-reducers/search-query'
 
 const useStyles = makeStyles((theme) => ({
   searchBoxNormal: {
@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBox = () => {
-  const [text, setText] = useState('')
+  const searchQuery = useSelector(selectSearchQuery)
+  const [text, setText] = useState(searchQuery.q)
   const [isActive, setActive] = useState(false)
   const classes = useStyles()
   const dispatch = useDispatch()
@@ -41,6 +42,7 @@ const SearchBox = () => {
     <SearchBoxContainer>
       <SearchIcon className={isActive ? classes.searchBoxActive : classes.searchBoxNormal} />
       <CustomInput
+        value={text}
         placeholder="Search..."
         onBlur={onBlur}
         onClick={onClick}
