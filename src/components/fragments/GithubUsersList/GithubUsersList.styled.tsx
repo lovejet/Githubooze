@@ -7,7 +7,6 @@ const GithubUsersListContainer = styled.div`
   overflow: auto;
   margin-top: ${spaceDt(2)};
   margin-bottom: ${spaceDt(2)};
-  background-color: green;
 `
 
 export { GithubUsersListContainer }
