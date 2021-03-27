@@ -14,7 +14,7 @@ const initialState: INTERFACE_SEARCH_QUERY = {
 };
 
 export const searchQuery = createSlice({
-  name: 'dealState',
+  name: 'searchQuery',
   initialState,
   reducers: {
     setQuery: (state, action: PayloadAction<string>) => {

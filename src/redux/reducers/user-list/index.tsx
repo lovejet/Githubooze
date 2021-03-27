@@ -251,7 +251,7 @@ export const fetchUsers = createAsyncThunk<
 )
 
 export const userList = createSlice({
-  name: 'dealState',
+  name: 'userList',
   initialState,
   reducers: {
     resetUserList: (state) => {
