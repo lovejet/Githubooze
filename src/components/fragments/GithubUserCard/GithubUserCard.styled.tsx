@@ -7,7 +7,7 @@ const GithubUserCardContainer = styled.div`
   flex-direction: row;
   width: ${toVW(420, 'desktop')};
   height: ${toVW(200, 'desktop')};
-  margin: ${spaceDt(2)};
+  margin: ${spaceDt(1)} ${spaceDt(2)};
   background-color: ${color.bg.primary};
 `
 
@@ -43,4 +43,13 @@ const Link = styled.a`
   text-decoration: none;
 `
 
-export { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link }
+const ImagePlaceHolderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: ${color.bg.light2};
+`
+
+export { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link, ImagePlaceHolderContainer }
