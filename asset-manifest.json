@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/Githubooze/static/css/main.d5ef7db3.chunk.css",
-    "main.js": "/Githubooze/static/js/main.b5156ffd.chunk.js",
-    "main.js.map": "/Githubooze/static/js/main.b5156ffd.chunk.js.map",
+    "main.js": "/Githubooze/static/js/main.e832f561.chunk.js",
+    "main.js.map": "/Githubooze/static/js/main.e832f561.chunk.js.map",
     "runtime-main.js": "/Githubooze/static/js/runtime-main.06b23b98.js",
     "runtime-main.js.map": "/Githubooze/static/js/runtime-main.06b23b98.js.map",
-    "static/js/2.bb57ba86.chunk.js": "/Githubooze/static/js/2.bb57ba86.chunk.js",
-    "static/js/2.bb57ba86.chunk.js.map": "/Githubooze/static/js/2.bb57ba86.chunk.js.map",
+    "static/js/2.1465ae18.chunk.js": "/Githubooze/static/js/2.1465ae18.chunk.js",
+    "static/js/2.1465ae18.chunk.js.map": "/Githubooze/static/js/2.1465ae18.chunk.js.map",
     "static/js/3.a1ea80b3.chunk.js": "/Githubooze/static/js/3.a1ea80b3.chunk.js",
     "static/js/3.a1ea80b3.chunk.js.map": "/Githubooze/static/js/3.a1ea80b3.chunk.js.map",
     "index.html": "/Githubooze/index.html",
     "static/css/main.d5ef7db3.chunk.css.map": "/Githubooze/static/css/main.d5ef7db3.chunk.css.map",
-    "static/js/2.bb57ba86.chunk.js.LICENSE.txt": "/Githubooze/static/js/2.bb57ba86.chunk.js.LICENSE.txt",
+    "static/js/2.1465ae18.chunk.js.LICENSE.txt": "/Githubooze/static/js/2.1465ae18.chunk.js.LICENSE.txt",
     "static/media/GT-Haptik-Regular.6c476855.woff2": "/Githubooze/static/media/GT-Haptik-Regular.6c476855.woff2",
     "static/media/GT-Haptik-Regular.73d4ac05.woff": "/Githubooze/static/media/GT-Haptik-Regular.73d4ac05.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.06b23b98.js",
-    "static/js/2.bb57ba86.chunk.js",
+    "static/js/2.1465ae18.chunk.js",
     "static/css/main.d5ef7db3.chunk.css",
-    "static/js/main.b5156ffd.chunk.js"
+    "static/js/main.e832f561.chunk.js"
   ]
 }
