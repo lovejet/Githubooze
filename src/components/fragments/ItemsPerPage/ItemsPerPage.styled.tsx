@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { color, getTypography, spaceDt } from '@helpers/styles'
 import { toVW } from '@helpers/methods'
+import { color, getTypography, spaceDt } from '@helpers/styles'
 
 const ItemsPerPageBoxContainer = styled.div`
   display: flex;

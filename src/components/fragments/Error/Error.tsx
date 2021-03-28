@@ -1,7 +1,7 @@
-import { toVW } from '@helpers/methods'
-import { color, getTypography } from '@helpers/styles'
 import { memo } from 'react'
 import styled from 'styled-components'
+import { toVW } from '@helpers/methods'
+import { color, getTypography } from '@helpers/styles'
 
 const ErrorContainer = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { FooterContainer, CopyrightText, CopyRightVector } from './Footer.styled'
 import { APPLICATION_DEVELOPER } from '@constants'
+import { FooterContainer, CopyrightText, CopyRightVector } from './Footer.styled'
 
 const Footer = () => (
   <FooterContainer>

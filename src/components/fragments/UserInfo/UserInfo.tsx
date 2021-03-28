@@ -1,10 +1,27 @@
+import React, { memo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
+import Error from '@components/Error'
 import Loading from '@components/Loading'
 import NoResult from '@components/NoResult'
-import Error from '@components/Error'
 import UserRepoList from '@components/UserRepoList'
+import CustomPagination from '@components/CustomPagination'
+
 import { resetUserData, selectUserData } from '@redux-reducers/user-data'
-import { useDispatch, useSelector } from 'react-redux'
+
 import BackButtonIcon from '@material-ui/icons/ArrowBack'
+import CompanyIcon from '@material-ui/icons/Apartment'
+import LocationIcon from '@material-ui/icons/LocationOn'
+import EmailIcon from '@material-ui/icons/Email'
+import BioIcon from '@material-ui/icons/Book'
+import PeopleIcon from '@material-ui/icons/People'
+import BlogIcon from '@material-ui/icons/Link'
+import TwitterIcon from '@material-ui/icons/Twitter'
+import StorageIcon from '@material-ui/icons/Storage'
+import AssignmentIcon from '@material-ui/icons/Assignment'
+import TimeIcon from '@material-ui/icons/Today'
+
 import {
   UserInfoContainer,
   BackButtonContainer,
@@ -21,20 +38,6 @@ import {
   InfoPane,
   CountPane,
 } from './UserInfo.styled'
-import CompanyIcon from '@material-ui/icons/Apartment'
-import LocationIcon from '@material-ui/icons/LocationOn'
-import EmailIcon from '@material-ui/icons/Email'
-import BioIcon from '@material-ui/icons/Book'
-import PeopleIcon from '@material-ui/icons/People'
-import BlogIcon from '@material-ui/icons/Link'
-import TwitterIcon from '@material-ui/icons/Twitter'
-// import StarIcon from '@material-ui/icons/Star'
-import StorageIcon from '@material-ui/icons/Storage'
-import AssignmentIcon from '@material-ui/icons/Assignment'
-import TimeIcon from '@material-ui/icons/Today'
-import React, { memo } from 'react'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import CustomPagination from '@components/CustomPagination'
 
 const UserInfo = () => {
   const dispatch = useDispatch()

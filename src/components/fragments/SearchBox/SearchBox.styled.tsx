@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+
+import { toVW } from '@helpers/methods'
 import { color, getTypography, spaceDt } from '@helpers/styles'
+
 import { withStyles } from '@material-ui/core/styles'
 import { InputBase } from '@material-ui/core'
-import { toVW } from '@helpers/methods'
 
 const SearchBoxContainer = styled.div`
   display: flex;

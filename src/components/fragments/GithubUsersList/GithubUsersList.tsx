@@ -1,13 +1,17 @@
-import { API_GITHUB_USER_SEARCH_URL } from '@constants'
-import { selectSearchQuery } from '@redux-reducers/search-query'
-import { fetchUsers, resetUserList, selectUserList } from '@redux-reducers/user-list'
 import { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { GithubUsersListContainer, TotalUserCount, ListContainer } from './GithubUsersList.styled'
+
+import { API_GITHUB_USER_SEARCH_URL } from '@constants'
+
+import { selectSearchQuery } from '@redux-reducers/search-query'
+import { fetchUsers, resetUserList, selectUserList } from '@redux-reducers/user-list'
+
+import Error from '@components/Error'
 import Loading from '@components/Loading'
 import NoResult from '@components/NoResult'
-import Error from '@components/Error'
 import GithubUserCard from '@components/GithubUserCard'
+
+import { GithubUsersListContainer, TotalUserCount, ListContainer } from './GithubUsersList.styled'
 
 const GithubUsersList = () => {
   const dispatch = useDispatch()

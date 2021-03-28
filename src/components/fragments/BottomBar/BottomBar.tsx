@@ -1,10 +1,13 @@
 import { memo } from 'react'
-import ItemsPerPage from '@components/ItemsPerPage'
-import { BottomBarContainer } from './BottomBar.styled'
-import CustomPagination from '@components/CustomPagination'
 import { useSelector } from 'react-redux'
+
+import ItemsPerPage from '@components/ItemsPerPage'
+import CustomPagination from '@components/CustomPagination'
+
 import { selectUserList } from '@redux-reducers/user-list'
 import { selectSearchQuery } from '@redux-reducers/search-query'
+
+import { BottomBarContainer } from './BottomBar.styled'
 
 const BottomBar = () => {
   const searchQuery = useSelector(selectSearchQuery)

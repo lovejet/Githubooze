@@ -1,12 +1,16 @@
-import { API_GITHUB_USER_REPOS } from '@constants'
 import { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { UserRepoListContainer, ListContainer } from './UserRepoList.styled'
+
+import { API_GITHUB_USER_REPOS } from '@constants'
+
+import Error from '@components/Error'
 import Loading from '@components/Loading'
 import NoResult from '@components/NoResult'
-import Error from '@components/Error'
-import { fetchRepos, selectRepoList } from '@redux-reducers/repo-list'
 import RepoCard from '@components/RepoCard'
+
+import { fetchRepos, selectRepoList } from '@redux-reducers/repo-list'
+
+import { UserRepoListContainer, ListContainer } from './UserRepoList.styled'
 
 const UserRepoList = ({ user }: { user: string | undefined }) => {
   const dispatch = useDispatch()

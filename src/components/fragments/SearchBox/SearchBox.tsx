@@ -1,10 +1,14 @@
 import { ChangeEvent, KeyboardEvent, memo, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import SearchIcon from '@material-ui/icons/Search'
 import { makeStyles } from '@material-ui/core/styles'
-import { CustomInput, SearchBoxContainer } from './SearchBox.styled'
+
 import { color } from '@helpers/styles'
-import { useDispatch, useSelector } from 'react-redux'
+
 import { selectSearchQuery, setCurrentPage, setQuery } from '@redux-reducers/search-query'
+
+import { CustomInput, SearchBoxContainer } from './SearchBox.styled'
 
 const useStyles = makeStyles((theme) => ({
   searchBoxNormal: {

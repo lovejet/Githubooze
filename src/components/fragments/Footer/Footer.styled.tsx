@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { CopyRightSymbol } from '@illustrations'
-import { screenMin, color, spaceDt, getTypography } from '@helpers/styles'
 import { toVW } from '@helpers/methods'
+import { screenMin, color, spaceDt, getTypography } from '@helpers/styles'
+import { CopyRightSymbol } from '@illustrations'
 
 const FooterContainer = styled.div`
   width: 100%;

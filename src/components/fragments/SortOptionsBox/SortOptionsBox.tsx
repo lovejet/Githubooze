@@ -1,13 +1,18 @@
 import { ChangeEvent, memo, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { SORT_OPTIONS } from '@constants'
+
 import { color } from '@helpers/styles'
-import { ListSubheader, makeStyles, MenuItem, OutlinedInput, Select } from '@material-ui/core'
-import CheckIcon from '@material-ui/icons/Check'
-import { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './SortOptionsBox.styled'
 import { toVW } from '@helpers/methods'
 import { INTERFACE_SORT_OPTIONS } from '@helpers/types'
-import { useDispatch, useSelector } from 'react-redux'
+
+import CheckIcon from '@material-ui/icons/Check'
+import { ListSubheader, makeStyles, MenuItem, OutlinedInput, Select } from '@material-ui/core'
+
 import { selectSearchQuery, setCurrentPage, setSortOptions } from '@redux-reducers/search-query'
+
+import { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './SortOptionsBox.styled'
 
 const useStyles = makeStyles((theme) => ({
   select: {

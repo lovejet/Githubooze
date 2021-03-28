@@ -1,12 +1,16 @@
 import { ChangeEvent, memo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
-import { Pagination, PaginationItem } from '@material-ui/lab'
-import { PaginationContainer } from './CustomPagination.styled'
-import { makeStyles } from '@material-ui/core'
-import { color } from '@helpers/styles'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { makeStyles } from '@material-ui/core'
+import { Pagination, PaginationItem } from '@material-ui/lab'
+
+import { color } from '@helpers/styles'
+
 import { selectSearchQuery, setCurrentPage } from '@redux-reducers/search-query'
 import { selectRepoList, setCurrentPageOfRepo } from '@redux-reducers/repo-list'
+
+import { PaginationContainer } from './CustomPagination.styled'
 
 const useStyles = makeStyles((theme) => ({
   ul: {

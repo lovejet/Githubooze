@@ -1,4 +1,10 @@
 import { memo } from 'react'
+
+import { INTERFACE_REPO } from '@helpers/types'
+import StarIcon from '@material-ui/icons/Star'
+import ForkIcon from '@material-ui/icons/CallSplit'
+import WatchIcon from '@material-ui/icons/Visibility'
+
 import {
   RepoCardContainer,
   RepoName,
@@ -8,10 +14,6 @@ import {
   LargeField,
   LargeFieldText
 } from './RepoCard.styled'
-import { INTERFACE_REPO } from '@helpers/types'
-import StarIcon from '@material-ui/icons/Star'
-import ForkIcon from '@material-ui/icons/CallSplit'
-import WatchIcon from '@material-ui/icons/Visibility'
 
 const RepoCard = ({ repo }: { repo: INTERFACE_REPO}) => {
   const renderLargeField = (icon: React.ReactNode, text: React.ReactNode) => (

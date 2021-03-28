@@ -1,5 +1,5 @@
-import { toVW } from '@helpers/methods'
 import styled from 'styled-components'
+import { toVW } from '@helpers/methods'
 
 const UserRepoListContainer = styled.div`
   display: flex;

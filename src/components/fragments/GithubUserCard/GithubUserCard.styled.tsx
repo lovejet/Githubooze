@@ -1,6 +1,6 @@
+import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
 import { color, spaceDt } from '@helpers/styles'
-import styled from 'styled-components'
 
 const GithubUserCardContainer = styled.div`
   display: flex;

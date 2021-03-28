@@ -1,12 +1,17 @@
 import { ChangeEvent, memo } from 'react'
-import { ITEMS_PER_PAGE } from '@constants'
-import { color } from '@helpers/styles'
-import { ListSubheader, makeStyles, MenuItem, OutlinedInput, Select } from '@material-ui/core'
-import CheckIcon from '@material-ui/icons/Check'
-import { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './ItemsPerPage.styled'
-import { toVW } from '@helpers/methods'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { ITEMS_PER_PAGE } from '@constants'
+
+import CheckIcon from '@material-ui/icons/Check'
+import { ListSubheader, makeStyles, MenuItem, OutlinedInput, Select } from '@material-ui/core'
+
+import { color } from '@helpers/styles'
+import { toVW } from '@helpers/methods'
+
 import { selectSearchQuery, setCurrentPage, setItemsPerPage } from '@redux-reducers/search-query'
+
+import { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './ItemsPerPage.styled'
 
 const useStyles = makeStyles((theme) => ({
   select: {

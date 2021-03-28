@@ -1,6 +1,6 @@
+import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
 import { color, getTypography, spaceDt } from '@helpers/styles'
-import styled from 'styled-components'
 
 const RepoCardContainer = styled.div`
   display: flex;
