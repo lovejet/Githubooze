@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core'
 import { color } from '@helpers/styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectSearchQuery, setCurrentPage } from '@redux-reducers/search-query'
+import { selectRepoList, setCurrentPageOfRepo } from '@redux-reducers/repo-list'
 
 const useStyles = makeStyles((theme) => ({
   ul: {
@@ -21,13 +22,15 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
-function CustomPagination ({ pages }: InferProps<typeof CustomPagination.propTypes>) {
+function CustomPagination ({ pages, type }: InferProps<typeof CustomPagination.propTypes>) {
   const classes = useStyles()
   const dispatch = useDispatch()
   const searchQuery = useSelector(selectSearchQuery)
+  const repoList = useSelector(selectRepoList)
 
   const onChange = (event: ChangeEvent<unknown>, value: number) => {
-    dispatch(setCurrentPage(value))
+    if (type === 'users') dispatch(setCurrentPage(value))
+    else dispatch(setCurrentPageOfRepo(value))
   }
 
   return (
@@ -35,7 +38,7 @@ function CustomPagination ({ pages }: InferProps<typeof CustomPagination.propTyp
       <Pagination
         classes={{ul: classes.ul}}
         count={pages}
-        page={searchQuery.currentPage}
+        page={type === 'users' ? searchQuery.currentPage : repoList.current_page}
         onChange={onChange} 
         renderItem={(item)=> <PaginationItem {...item} classes={{selected:classes.selected}} />} />
     </PaginationContainer>
@@ -43,7 +46,12 @@ function CustomPagination ({ pages }: InferProps<typeof CustomPagination.propTyp
 }
 
 CustomPagination.propTypes = {
-  pages: PropTypes.number.isRequired
+  pages: PropTypes.number.isRequired,
+  type: PropTypes.string,
+}
+
+CustomPagination.defaultProps = {
+  type: 'users',
 }
 
 export default memo(CustomPagination)

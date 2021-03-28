@@ -1,11 +1,11 @@
 import { INTERFACE_USER_DATA, INTERFACE_REJECT_VALUE, INTERFACE_USER_INFO } from '@helpers/types'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '@redux-store'
-import axios from 'axios';
-import { GITHUB_DEVELOP_TOKEN } from '@constants';
+import axios from 'axios'
 
 const initialState: INTERFACE_USER_DATA = {
   data: null,
+  stars: 0,
   status: "idle",
   error: null,
 };
@@ -19,17 +19,15 @@ export const fetchUserData = createAsyncThunk<
   async (url: string, thunkApi) => {
     const response = await axios.get(url, {
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Basic ' + GITHUB_DEVELOP_TOKEN
+        'Content-Type': 'application/json'
       }
     })
     if (response.status !== 200) {
       // Return the error message:
-      return thunkApi.rejectWithValue({ 
+      return thunkApi.rejectWithValue({
         message: "Failed to fetch users." 
       })
     }
-    console.log(response.data)
     return response.data
     // return {
     //   "login": "Aaaaaaaty",
@@ -68,6 +66,28 @@ export const fetchUserData = createAsyncThunk<
   }
 )
 
+export const fetchStars = createAsyncThunk<
+  number,
+  string,
+  { rejectValue: INTERFACE_REJECT_VALUE }
+  >(
+  'userData/fetchStars',
+  async (url: string, thunkApi) => {
+    const response = await axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (response.status !== 200) {
+      // Return the error message:
+      return thunkApi.rejectWithValue({ 
+        message: "Failed to fetch stars." 
+      })
+    }
+    return response.data.length
+  }
+)
+
 export const userData = createSlice({
   name: 'userData',
   initialState,
@@ -90,6 +110,21 @@ export const userData = createSlice({
       state.status = "idle"
     });
     builder.addCase(fetchUserData.rejected, 
+      (state, { payload }) => {
+      if (payload) state.error = payload.message
+      state.status = "idle"
+    });
+
+    builder.addCase(fetchStars.pending, (state) => {
+      state.status = "loading"
+      state.error = null
+    });
+    builder.addCase(fetchStars.fulfilled, 
+      (state, { payload }) => {
+      state.stars += payload
+      state.status = "idle"
+    });
+    builder.addCase(fetchStars.rejected, 
       (state, { payload }) => {
       if (payload) state.error = payload.message
       state.status = "idle"

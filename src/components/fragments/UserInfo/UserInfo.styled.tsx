@@ -11,7 +11,6 @@ const BackButtonContainer = styled.div`
   align-items: center;
   cursor: pointer;
   height: ${toVW(50, 'desktop')};
-  margin-bottom: ${spaceDt(2)};
   color: ${color.bg.secondary};
 `
 
@@ -23,11 +22,11 @@ const UserDataContainer = styled.div`
 
 const LeftPane = styled.div`
   width: ${toVW(200, 'desktop')};
-  margin-right: ${spaceDt(5)};
+  margin-right: ${spaceDt(3)};
 `
 
 const RightPane = styled.div`
-  width: calc(100% - ${toVW(300, 'desktop')} - ${spaceDt(3)});
+  width: calc(100% - ${toVW(200, 'desktop')} - ${spaceDt(3)});
 `
 
 const Avatar = styled.div`
@@ -37,11 +36,18 @@ const Avatar = styled.div`
   margin-bottom: ${spaceDt(1)};
 `
 
-const LeftField = styled.div`
+const SmallField = styled.div`
   display: flex;
   align-items: flex-start;
   color: ${color.text.primary};
   margin-bottom: ${spaceDt(1)};
+`
+
+const LargeField = styled.div`
+  display: flex;
+  align-items: center;
+  color: ${color.text.primary};
+  margin-right: ${spaceDt(2)};
 `
 
 const UserName = styled.div`
@@ -51,15 +57,32 @@ const UserName = styled.div`
   ${getTypography('body-3')};
 `
 
-const LeftFieldText = styled.div`
+const SmallFieldText = styled.div`
   margin-left: ${spaceDt(0.5)};
   ${getTypography('body-5')};
+`
+
+const LargeFieldText = styled.div`
+  margin-left: ${spaceDt(0.5)};
+  ${getTypography('body-3')};
 `
 
 const Link = styled.a`
   cursor: pointer;
   color: ${color.text.primary};
   text-decoration: none;
+`
+
+const InfoPane = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: ${toVW(50, 'desktop')};
+`
+
+const CountPane = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 export {
@@ -69,8 +92,12 @@ export {
   LeftPane,
   RightPane,
   Avatar,
-  LeftField,
+  SmallField,
   UserName,
-  LeftFieldText,
+  SmallFieldText,
   Link,
+  LargeField,
+  LargeFieldText,
+  InfoPane,
+  CountPane,
 }

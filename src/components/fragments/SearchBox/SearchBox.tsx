@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { CustomInput, SearchBoxContainer } from './SearchBox.styled'
 import { color } from '@helpers/styles'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectSearchQuery, setQuery } from '@redux-reducers/search-query'
+import { selectSearchQuery, setCurrentPage, setQuery } from '@redux-reducers/search-query'
 
 const useStyles = makeStyles((theme) => ({
   searchBoxNormal: {
@@ -35,7 +35,10 @@ const SearchBox = () => {
   }
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if(event.key === 'Enter') dispatch(setQuery(text))
+    if(event.key === 'Enter'){
+      dispatch(setCurrentPage(1))
+      dispatch(setQuery(text))
+    }
   }
 
   return (

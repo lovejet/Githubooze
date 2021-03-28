@@ -1,6 +1,7 @@
 import Loading from '@components/Loading'
 import NoResult from '@components/NoResult'
 import Error from '@components/Error'
+import UserRepoList from '@components/UserRepoList'
 import { resetUserData, selectUserData } from '@redux-reducers/user-data'
 import { useDispatch, useSelector } from 'react-redux'
 import BackButtonIcon from '@material-ui/icons/ArrowBack'
@@ -11,10 +12,14 @@ import {
   LeftPane,
   RightPane,
   Avatar,
-  LeftField,
+  SmallField,
   UserName,
-  LeftFieldText,
+  SmallFieldText,
   Link,
+  LargeField,
+  LargeFieldText,
+  InfoPane,
+  CountPane,
 } from './UserInfo.styled'
 import CompanyIcon from '@material-ui/icons/Apartment'
 import LocationIcon from '@material-ui/icons/LocationOn'
@@ -23,15 +28,25 @@ import BioIcon from '@material-ui/icons/Book'
 import PeopleIcon from '@material-ui/icons/People'
 import BlogIcon from '@material-ui/icons/Link'
 import TwitterIcon from '@material-ui/icons/Twitter'
+// import StarIcon from '@material-ui/icons/Star'
+import StorageIcon from '@material-ui/icons/Storage'
+import AssignmentIcon from '@material-ui/icons/Assignment'
+import TimeIcon from '@material-ui/icons/Today'
 import React, { memo } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import CustomPagination from '@components/CustomPagination'
 
 const UserInfo = () => {
   const dispatch = useDispatch()
   const userData = useSelector(selectUserData)
+  const joinedDate = new Date(userData.data?.created_at ?? '')
 
-  const renderLeftField = (icon: React.ReactNode, text: React.ReactNode) => (
-    <LeftField>{icon}<LeftFieldText>{text}</LeftFieldText></LeftField>
+  const renderSmallField = (icon: React.ReactNode, text: React.ReactNode) => (
+    <SmallField>{icon}<SmallFieldText>{text}</SmallFieldText></SmallField>
+  )
+
+  const renderLargeField = (icon: React.ReactNode, text: React.ReactNode) => (
+    <LargeField>{icon}<LargeFieldText>{text}</LargeFieldText></LargeField>
   )
 
   const renderData = () => {
@@ -46,39 +61,61 @@ const UserInfo = () => {
               placeholderSrc="/images/avatar.png"
             />
           </Avatar>
-          {renderLeftField(null, <><UserName>{userData.data?.name}</UserName>{userData.data?.login}</>)}
+          {renderSmallField(null, <><UserName>{userData.data?.name}</UserName>{userData.data?.login}</>)}
           {userData.data?.bio
-            && renderLeftField(<BioIcon fontSize="small" />, userData.data?.bio)}
-          {renderLeftField(<PeopleIcon fontSize="small" />, <>{userData.data?.followers} follower &middot; {userData.data?.following} following</>)}
+            && renderSmallField(<BioIcon fontSize="small" />, userData.data?.bio)}
+          {renderSmallField(<PeopleIcon fontSize="small" />, <>{userData.data?.followers} follower &middot; {userData.data?.following} following</>)}
 
           {userData.data?.company
-            && renderLeftField(
+            && renderSmallField(
                 <CompanyIcon fontSize="small" />,
                 userData.data?.company
               )}
           {userData.data?.location
-            && renderLeftField(
+            && renderSmallField(
                 <LocationIcon fontSize="small" />, 
                 userData.data?.location
               )}
           {userData.data?.email
-            && renderLeftField(
+            && renderSmallField(
                 <EmailIcon fontSize="small" />, 
                 userData.data?.email
               )}
           {userData.data?.blog
-            && renderLeftField(
+            && renderSmallField(
                 <BlogIcon fontSize="small" />, 
                 <Link href={userData.data?.blog}>{userData.data?.blog}</Link>
               )}
           {userData.data?.twitter_username
-            && renderLeftField(
+            && renderSmallField(
                 <TwitterIcon fontSize="small" />,
                 <Link href={`https://twitter.com/${userData.data?.twitter_username}`}>@{userData.data?.twitter_username}</Link>
               )}
+          {userData.data?.created_at
+            && renderSmallField(
+                <TimeIcon fontSize="small" />, 
+                `Joined at ${joinedDate.getMonth()}/${joinedDate.getDay()}/${joinedDate.getFullYear()}`
+              )}
         </LeftPane>
         <RightPane>
-          right
+          <InfoPane>
+            <CountPane>
+              {renderLargeField(
+                <StorageIcon />,
+                `${userData.data?.public_repos} repos`
+              )}
+              {renderLargeField(
+                <AssignmentIcon />,
+                `${userData.data?.public_gists} gists`
+              )}
+            </CountPane>
+            {/* {renderLargeField(
+              <StarIcon />,
+              `${userData.stars} stars`
+            )} */}
+            <CustomPagination type="repos" pages={Math.min(Math.ceil((userData.data?.public_repos || 0) / 100), 100)}/>
+          </InfoPane>
+          <UserRepoList user={userData.data?.login} />
         </RightPane>
       </UserDataContainer>
     )

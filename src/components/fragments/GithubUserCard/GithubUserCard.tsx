@@ -3,11 +3,13 @@ import { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link } fr
 import { INTERFACE_USER } from '@helpers/types'
 import { useDispatch } from 'react-redux'
 import { fetchUserData } from '@redux-reducers/user-data'
+import { reseRepoList } from '@redux-reducers/repo-list'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const GithubUserCard = ({ user }: { user: INTERFACE_USER}) => {
   const dispatch = useDispatch()
   const onClickDetail = () => {
+    dispatch(reseRepoList())
     dispatch(fetchUserData(user.url))
   }
 
