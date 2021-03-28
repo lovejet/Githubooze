@@ -1,4 +1,4 @@
-import { API_GITHUG_USER_SEARCH_URL } from '@constants'
+import { API_GITHUB_USER_SEARCH_URL } from '@constants'
 import { selectSearchQuery } from '@redux-reducers/search-query'
 import { fetchUsers, resetUserList, selectUserList } from '@redux-reducers/user-list'
 import { memo, useEffect } from 'react'
@@ -31,7 +31,7 @@ const GithubUsersList = () => {
 
   useEffect(() => {
     if(searchQuery.q !== '') {
-      const api_url = API_GITHUG_USER_SEARCH_URL.replace("%1", searchQuery.q)
+      const api_url = API_GITHUB_USER_SEARCH_URL.replace("%1", searchQuery.q)
                                                 .replace("%2", searchQuery.currentPage.toString())
                                                 .replace("%3", searchQuery.itemsPerPage.toString())
                                                 .replace("%4", searchQuery.sortOptions.o)

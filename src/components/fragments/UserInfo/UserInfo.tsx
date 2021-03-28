@@ -12,15 +12,19 @@ import {
   RightPane,
   Avatar,
   LeftField,
-  UserId,
+  UserName,
   LeftFieldText,
+  Link,
 } from './UserInfo.styled'
-import CompanyIcon from '@material-ui/icons/LocationCity'
+import CompanyIcon from '@material-ui/icons/Apartment'
 import LocationIcon from '@material-ui/icons/LocationOn'
 import EmailIcon from '@material-ui/icons/Email'
 import BioIcon from '@material-ui/icons/Book'
-import avatar from '@images/avatar.png'
+import PeopleIcon from '@material-ui/icons/People'
+import BlogIcon from '@material-ui/icons/Link'
+import TwitterIcon from '@material-ui/icons/Twitter'
 import React, { memo } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const UserInfo = () => {
   const dispatch = useDispatch()
@@ -34,14 +38,44 @@ const UserInfo = () => {
     return (
       <UserDataContainer>
         <LeftPane>
-          {/* <Avatar src={user.avatar_url} /> */}
-          <Avatar src={avatar} />
-          {renderLeftField(null, <UserId>{userData.data?.login}</UserId>)}
-          {userData.data?.company && renderLeftField(<CompanyIcon />, userData.data?.company)}
-          {userData.data?.location && renderLeftField(<LocationIcon />, userData.data?.location)}
-          {userData.data?.email && renderLeftField(<EmailIcon />, userData.data?.email)}
-          {userData.data?.bio && renderLeftField(<BioIcon />, userData.data?.bio)}
-          {renderLeftField(<BioIcon />, userData.data?.public_repos)}
+          <Avatar>
+            <LazyLoadImage
+              src={userData.data?.avatar_url}
+              width="100%"
+              height="100%"
+              placeholderSrc="/images/avatar.png"
+            />
+          </Avatar>
+          {renderLeftField(null, <><UserName>{userData.data?.name}</UserName>{userData.data?.login}</>)}
+          {userData.data?.bio
+            && renderLeftField(<BioIcon fontSize="small" />, userData.data?.bio)}
+          {renderLeftField(<PeopleIcon fontSize="small" />, <>{userData.data?.followers} follower &middot; {userData.data?.following} following</>)}
+
+          {userData.data?.company
+            && renderLeftField(
+                <CompanyIcon fontSize="small" />,
+                userData.data?.company
+              )}
+          {userData.data?.location
+            && renderLeftField(
+                <LocationIcon fontSize="small" />, 
+                userData.data?.location
+              )}
+          {userData.data?.email
+            && renderLeftField(
+                <EmailIcon fontSize="small" />, 
+                userData.data?.email
+              )}
+          {userData.data?.blog
+            && renderLeftField(
+                <BlogIcon fontSize="small" />, 
+                <Link href={userData.data?.blog}>{userData.data?.blog}</Link>
+              )}
+          {userData.data?.twitter_username
+            && renderLeftField(
+                <TwitterIcon fontSize="small" />,
+                <Link href={`https://twitter.com/${userData.data?.twitter_username}`}>@{userData.data?.twitter_username}</Link>
+              )}
         </LeftPane>
         <RightPane>
           right

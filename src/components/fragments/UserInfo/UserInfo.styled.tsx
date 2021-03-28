@@ -22,7 +22,7 @@ const UserDataContainer = styled.div`
 `
 
 const LeftPane = styled.div`
-  width: ${toVW(300, 'desktop')};
+  width: ${toVW(200, 'desktop')};
   margin-right: ${spaceDt(5)};
 `
 
@@ -30,9 +30,10 @@ const RightPane = styled.div`
   width: calc(100% - ${toVW(300, 'desktop')} - ${spaceDt(3)});
 `
 
-const Avatar = styled.img`
-  width: ${toVW(300, 'desktop')};
-  height: ${toVW(300, 'desktop')};
+const Avatar = styled.div`
+  width: ${toVW(200, 'desktop')};
+  height: ${toVW(200, 'desktop')};
+  border-radius: 100%;
   margin-bottom: ${spaceDt(1)};
 `
 
@@ -43,15 +44,22 @@ const LeftField = styled.div`
   margin-bottom: ${spaceDt(1)};
 `
 
-const UserId = styled.div`
+const UserName = styled.div`
   display: flex;
   align-items: flex-start;
-  ${getTypography('body-1')};
+  color: ${color.text.light};
+  ${getTypography('body-3')};
 `
 
 const LeftFieldText = styled.div`
   margin-left: ${spaceDt(0.5)};
-  ${getTypography('body-2')};
+  ${getTypography('body-5')};
+`
+
+const Link = styled.a`
+  cursor: pointer;
+  color: ${color.text.primary};
+  text-decoration: none;
 `
 
 export {
@@ -62,6 +70,7 @@ export {
   RightPane,
   Avatar,
   LeftField,
-  UserId,
+  UserName,
   LeftFieldText,
+  Link,
 }

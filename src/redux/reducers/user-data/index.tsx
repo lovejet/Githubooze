@@ -2,6 +2,7 @@ import { INTERFACE_USER_DATA, INTERFACE_REJECT_VALUE, INTERFACE_USER_INFO } from
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '@redux-store'
 import axios from 'axios';
+import { GITHUB_DEVELOP_TOKEN } from '@constants';
 
 const initialState: INTERFACE_USER_DATA = {
   data: null,
@@ -18,7 +19,8 @@ export const fetchUserData = createAsyncThunk<
   async (url: string, thunkApi) => {
     const response = await axios.get(url, {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: 'Basic ' + GITHUB_DEVELOP_TOKEN
       }
     })
     if (response.status !== 200) {
@@ -27,6 +29,7 @@ export const fetchUserData = createAsyncThunk<
         message: "Failed to fetch users." 
       })
     }
+    console.log(response.data)
     return response.data
     // return {
     //   "login": "Aaaaaaaty",

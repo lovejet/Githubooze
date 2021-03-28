@@ -43,13 +43,4 @@ const Link = styled.a`
   text-decoration: none;
 `
 
-const ImagePlaceHolderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: ${color.bg.light2};
-`
-
-export { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link, ImagePlaceHolderContainer }
+export { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link }

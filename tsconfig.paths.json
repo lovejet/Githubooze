@@ -5,7 +5,6 @@
         "@helpers/*": ["./src/helpers/*"],
         "@components/*": ["./src/components/fragments/*"],
         "@constants": ["./src/constants"],
-        "@images/*": ["./src/images/*"],
         "@illustrations": ["./src/components/vectors/illustrations"],
         "@fonts/*": ["./src/fonts/*"],
         "@redux-store": ["./src/redux/store"],
