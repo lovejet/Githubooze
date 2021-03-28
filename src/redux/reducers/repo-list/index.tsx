@@ -19,7 +19,8 @@ export const fetchRepos = createAsyncThunk<
   async (url: string, thunkApi) => {
     const response = await axios.get(url, {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${process.env.GITHUB_API_DEVELO_TOKEN}`
       }
     })
     if (response.status !== 200) {
