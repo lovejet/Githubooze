@@ -20,7 +20,7 @@ export const fetchUserData = createAsyncThunk<
     const response = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${process.env.GITHUB_API_DEVELO_TOKEN}`
+        'Authorization': `token ${process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN}`
       }
     })
     if (response.status !== 200) {
@@ -77,7 +77,7 @@ export const fetchStars = createAsyncThunk<
     const response = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${process.env.GITHUB_API_DEVELO_TOKEN}`
+        'Authorization': `token ${process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN}`
       }
     })
     if (response.status !== 200) {
