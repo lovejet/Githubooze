@@ -12,7 +12,10 @@ const RepoCardContainer = styled.div`
   padding: ${spaceDt(2)};
 `
 
-const RepoName  = styled.div`
+const RepoName  = styled.a`
+  cursor: pointer;
+  color: ${color.text.light};
+  text-decoration: none;
   ${getTypography('body-2')};
 `
 
