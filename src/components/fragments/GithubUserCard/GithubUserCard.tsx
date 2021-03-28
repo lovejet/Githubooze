@@ -23,7 +23,7 @@ const GithubUserCard = ({ user }: { user: INTERFACE_USER}) => {
           src={user.avatar_url}
           width="100%"
           height="100%"
-          placeholderSrc="/images/avatar.png"
+          placeholderSrc="images/avatar.png"
         />
       </AvatarPane>
       <InfoPane>

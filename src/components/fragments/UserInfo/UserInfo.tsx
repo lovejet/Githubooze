@@ -61,7 +61,7 @@ const UserInfo = () => {
               src={userData.data?.avatar_url}
               width="100%"
               height="100%"
-              placeholderSrc="/images/avatar.png"
+              placeholderSrc="images/avatar.png"
             />
           </Avatar>
           {renderSmallField(null, <><UserName>{userData.data?.name}</UserName>{userData.data?.login}</>)}
