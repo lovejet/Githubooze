@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Githubooze/static/css/main.d5ef7db3.chunk.css",
+    "main.js": "/Githubooze/static/js/main.0182cc5d.chunk.js",
+    "main.js.map": "/Githubooze/static/js/main.0182cc5d.chunk.js.map",
+    "runtime-main.js": "/Githubooze/static/js/runtime-main.a10c080c.js",
+    "runtime-main.js.map": "/Githubooze/static/js/runtime-main.a10c080c.js.map",
+    "static/js/2.db3ed52d.chunk.js": "/Githubooze/static/js/2.db3ed52d.chunk.js",
+    "static/js/2.db3ed52d.chunk.js.map": "/Githubooze/static/js/2.db3ed52d.chunk.js.map",
+    "static/js/3.5ef38277.chunk.js": "/Githubooze/static/js/3.5ef38277.chunk.js",
+    "static/js/3.5ef38277.chunk.js.map": "/Githubooze/static/js/3.5ef38277.chunk.js.map",
+    "index.html": "/Githubooze/index.html",
+    "static/css/main.d5ef7db3.chunk.css.map": "/Githubooze/static/css/main.d5ef7db3.chunk.css.map",
+    "static/js/2.db3ed52d.chunk.js.LICENSE.txt": "/Githubooze/static/js/2.db3ed52d.chunk.js.LICENSE.txt",
+    "static/media/GT-Haptik-Regular.6c476855.woff2": "/Githubooze/static/media/GT-Haptik-Regular.6c476855.woff2",
+    "static/media/GT-Haptik-Regular.73d4ac05.woff": "/Githubooze/static/media/GT-Haptik-Regular.73d4ac05.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a10c080c.js",
+    "static/js/2.db3ed52d.chunk.js",
+    "static/css/main.d5ef7db3.chunk.css",
+    "static/js/main.0182cc5d.chunk.js"
+  ]
+}
