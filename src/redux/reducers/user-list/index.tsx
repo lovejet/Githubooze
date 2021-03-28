@@ -2,6 +2,7 @@ import { INTERFACE_USER_LIST, INTERFACE_USER_LIST_RESPONSE, INTERFACE_REJECT_VAL
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '@redux-store'
 import axios from 'axios';
+import { GITHUB_API_DEVELOP_TOKEN } from '@constants';
 
 const initialState: INTERFACE_USER_LIST = {
   data: [],
@@ -20,7 +21,7 @@ export const fetchUsers = createAsyncThunk<
     const response = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `token ${process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN}`
+        'Authorization': `token ${GITHUB_API_DEVELOP_TOKEN}`
       }
     })
     if (response.status !== 200) {

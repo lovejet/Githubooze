@@ -21,11 +21,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
+    
     - name: Make env file
       uses: SpicyPizza/create-envfile@v1
       with:
-        envkey_REACT_APP_GITHUB_API_DEVELOP_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        envkey_REACT_APP_GITHUB_API_DEVELOP_TOKEN_REV: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         file_name: .env.production
 
     - name: Install dependencies
@@ -35,10 +35,11 @@ jobs:
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
+        git remote set-url origin https://${github_username}:${github_password}@github.com/${repository}
         yarn run deploy
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        github_username: ${{ secrets.USER_NAME }}
+        github_password: ${{ secrets.PASSWORD }}
         repository: ${{ github.repository }}

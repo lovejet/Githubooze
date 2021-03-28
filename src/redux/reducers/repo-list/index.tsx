@@ -2,6 +2,7 @@ import { INTERFACE_REPO_LIST, INTERFACE_REPO, INTERFACE_REJECT_VALUE } from '@he
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '@redux-store'
 import axios from 'axios';
+import { GITHUB_API_DEVELOP_TOKEN } from '@constants';
 
 const initialState: INTERFACE_REPO_LIST = {
   data: [],
@@ -20,7 +21,7 @@ export const fetchRepos = createAsyncThunk<
     const response = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `token ${process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN}`
+        'Authorization': `token ${GITHUB_API_DEVELOP_TOKEN}`
       }
     })
     if (response.status !== 200) {
