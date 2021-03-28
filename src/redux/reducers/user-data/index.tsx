@@ -67,28 +67,28 @@ export const fetchUserData = createAsyncThunk<
   }
 )
 
-export const fetchStars = createAsyncThunk<
-  number,
-  string,
-  { rejectValue: INTERFACE_REJECT_VALUE }
-  >(
-  'userData/fetchStars',
-  async (url: string, thunkApi) => {
-    const response = await axios.get(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `token ${process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN}`
-      }
-    })
-    if (response.status !== 200) {
-      // Return the error message:
-      return thunkApi.rejectWithValue({ 
-        message: "Failed to fetch stars." 
-      })
-    }
-    return response.data.length
-  }
-)
+// export const fetchStars = createAsyncThunk<
+//   number,
+//   string,
+//   { rejectValue: INTERFACE_REJECT_VALUE }
+//   >(
+//   'userData/fetchStars',
+//   async (url: string, thunkApi) => {
+//     const response = await axios.get(url, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Basic ${process.env.REACT_APP_GITHUB_API_DEVELOP_TOKEN}`
+//       }
+//     })
+//     if (response.status !== 200) {
+//       // Return the error message:
+//       return thunkApi.rejectWithValue({ 
+//         message: "Failed to fetch stars." 
+//       })
+//     }
+//     return response.data.length
+//   }
+// )
 
 export const userData = createSlice({
   name: 'userData',
@@ -117,20 +117,20 @@ export const userData = createSlice({
       state.status = "idle"
     });
 
-    builder.addCase(fetchStars.pending, (state) => {
-      state.status = "loading"
-      state.error = null
-    });
-    builder.addCase(fetchStars.fulfilled, 
-      (state, { payload }) => {
-      state.stars += payload
-      state.status = "idle"
-    });
-    builder.addCase(fetchStars.rejected, 
-      (state, { payload }) => {
-      if (payload) state.error = payload.message
-      state.status = "idle"
-    });
+    // builder.addCase(fetchStars.pending, (state) => {
+    //   state.status = "loading"
+    //   state.error = null
+    // });
+    // builder.addCase(fetchStars.fulfilled, 
+    //   (state, { payload }) => {
+    //   state.stars += payload
+    //   state.status = "idle"
+    // });
+    // builder.addCase(fetchStars.rejected, 
+    //   (state, { payload }) => {
+    //   if (payload) state.error = payload.message
+    //   state.status = "idle"
+    // });
   }
 });
 
