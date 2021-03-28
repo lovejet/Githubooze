@@ -7,7 +7,7 @@ import { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }
 import { toVW } from '@helpers/methods'
 import { INTERFACE_SORT_OPTIONS } from '@helpers/types'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectSearchQuery, setSortOptions } from '@redux-reducers/search-query'
+import { selectSearchQuery, setCurrentPage, setSortOptions } from '@redux-reducers/search-query'
 
 const useStyles = makeStyles((theme) => ({
   select: {
@@ -53,6 +53,7 @@ const SortOptionsBox = () => {
     if(newIndex === -1) return
     setSortOptionsIndex(newIndex)
     dispatch(setSortOptions(SORT_OPTIONS[newIndex]))
+    dispatch(setCurrentPage(1))
   }
 
   return (

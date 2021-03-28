@@ -6,7 +6,7 @@ import CheckIcon from '@material-ui/icons/Check'
 import { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './ItemsPerPage.styled'
 import { toVW } from '@helpers/methods'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectSearchQuery, setItemsPerPage } from '@redux-reducers/search-query'
+import { selectSearchQuery, setCurrentPage, setItemsPerPage } from '@redux-reducers/search-query'
 
 const useStyles = makeStyles((theme) => ({
   select: {
@@ -50,6 +50,7 @@ const ItemsPerPage = () => {
     const itemsPerPage = event.target.value as number
     if(itemsPerPage === -1) return
     dispatch(setItemsPerPage(itemsPerPage))
+    dispatch(setCurrentPage(1))
   }
 
   return (

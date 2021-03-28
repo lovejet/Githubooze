@@ -1,9 +1,10 @@
 import { memo } from 'react'
-import { GithubUserCardContainer, AvatarPane, InfoPane, Avatar, UserId, Links, Link } from './GithubUserCard.styled'
+import { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link } from './GithubUserCard.styled'
 import { INTERFACE_USER } from '@helpers/types'
-import avatar from '@images/avatar.png'
+// import avatar from '@images/avatar.png'
 import { useDispatch } from 'react-redux'
 import { fetchUserData } from '@redux-reducers/user-data'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const GithubUserCard = ({ user }: { user: INTERFACE_USER}) => {
   const dispatch = useDispatch()
@@ -13,8 +14,8 @@ const GithubUserCard = ({ user }: { user: INTERFACE_USER}) => {
   return (
     <GithubUserCardContainer>
       <AvatarPane>
-        {/* <Avatar src={user.avatar_url} /> */}
-        <Avatar src={avatar} />
+        <LazyLoadImage src={user.avatar_url} width="100%" height="100%" />
+        {/* <Avatar src={avatar} /> */}
       </AvatarPane>
       <InfoPane>
         <UserId>{user.login}</UserId>

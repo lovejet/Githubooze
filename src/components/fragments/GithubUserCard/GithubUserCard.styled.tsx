@@ -17,11 +17,6 @@ const AvatarPane = styled.div`
   padding: ${spaceDt(2)};
 `
 
-const Avatar = styled.img`
-  width: 100%;
-  height: 100%;
-`
-
 const InfoPane = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,4 +43,4 @@ const Link = styled.a`
   text-decoration: none;
 `
 
-export { GithubUserCardContainer, AvatarPane, InfoPane, Avatar, UserId, Links, Link }
+export { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link }
