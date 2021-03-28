@@ -11,6 +11,7 @@ import { toVW } from '@helpers/methods'
 import { useSelector } from 'react-redux'
 import { selectUserData } from '@redux-reducers/user-data'
 import UserInfo from '@components/UserInfo'
+import Loading from '@components/Loading'
 
 const AppContainer = styled.div`
   background-color: ${color.bg.primary};
@@ -38,7 +39,8 @@ function App() {
             <BottomBar />
           </>
         )}
-        {userData.data && (
+        {userData.status === 'loading' && <Loading />}
+        {userData.data && userData.status === 'idle' && (
           <UserInfo />
         )}
       </BodyContainer>
