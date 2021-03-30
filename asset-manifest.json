@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Githubooze/static/css/main.d5ef7db3.chunk.css",
-    "main.js": "/Githubooze/static/js/main.fbf9eaf3.chunk.js",
-    "main.js.map": "/Githubooze/static/js/main.fbf9eaf3.chunk.js.map",
+    "main.js": "/Githubooze/static/js/main.6e203432.chunk.js",
+    "main.js.map": "/Githubooze/static/js/main.6e203432.chunk.js.map",
     "runtime-main.js": "/Githubooze/static/js/runtime-main.06b23b98.js",
     "runtime-main.js.map": "/Githubooze/static/js/runtime-main.06b23b98.js.map",
     "static/js/2.1465ae18.chunk.js": "/Githubooze/static/js/2.1465ae18.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.06b23b98.js",
     "static/js/2.1465ae18.chunk.js",
     "static/css/main.d5ef7db3.chunk.css",
-    "static/js/main.fbf9eaf3.chunk.js"
+    "static/js/main.6e203432.chunk.js"
   ]
 }
