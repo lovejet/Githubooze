@@ -58,6 +58,7 @@ const UserName = styled.div`
 `
 
 const SmallFieldText = styled.div`
+  width: 100%;
   margin-left: ${spaceDt(0.5)};
   ${getTypography('body-5')};
 `
