@@ -19,7 +19,7 @@ const UserRepoList = ({ user }: { user: string | undefined }) => {
   const renderList = () => {
     return (
       <ListContainer>
-        {repoList.data.map((repo) => <RepoCard repo={repo} />)}
+        {repoList.data.map((repo) => <RepoCard key={repo.node_id} repo={repo} />)}
       </ListContainer>
     )
   }
