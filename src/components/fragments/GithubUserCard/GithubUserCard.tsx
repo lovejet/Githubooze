@@ -1,20 +1,27 @@
-import { memo } from 'react'
-import { useDispatch } from 'react-redux'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { memo } from "react";
+import { useDispatch } from "react-redux";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { INTERFACE_USER } from '@helpers/types'
+import { INTERFACE_USER } from "@helpers/types";
 
-import { fetchUserData } from '@redux-reducers/user-data'
-import { reseRepoList } from '@redux-reducers/repo-list'
+import { fetchUserData } from "@redux-reducers/user-data";
+import { reseRepoList } from "@redux-reducers/repo-list";
 
-import { GithubUserCardContainer, AvatarPane, InfoPane, UserId, Links, Link } from './GithubUserCard.styled'
+import {
+  GithubUserCardContainer,
+  AvatarPane,
+  InfoPane,
+  UserId,
+  Links,
+  Link,
+} from "./GithubUserCard.styled";
 
-const GithubUserCard = ({ user }: { user: INTERFACE_USER}) => {
-  const dispatch = useDispatch()
+const GithubUserCard = ({ user }: { user: INTERFACE_USER }) => {
+  const dispatch = useDispatch();
   const onClickDetail = () => {
-    dispatch(reseRepoList())
-    dispatch(fetchUserData(user.url))
-  }
+    dispatch(reseRepoList());
+    dispatch(fetchUserData(user.url));
+  };
 
   return (
     <GithubUserCardContainer>
@@ -34,7 +41,7 @@ const GithubUserCard = ({ user }: { user: INTERFACE_USER}) => {
         </Links>
       </InfoPane>
     </GithubUserCardContainer>
-  )
-}
+  );
+};
 
-export default memo(GithubUserCard)
+export default memo(GithubUserCard);

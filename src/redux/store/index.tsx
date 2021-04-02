@@ -1,8 +1,8 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
-import searchQueryReducer from '@redux-reducers/search-query'
-import userListReducer from '@redux-reducers/user-list'
-import userDataReducer from '@redux-reducers/user-data'
-import repoListReducer from '@redux-reducers/repo-list'
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import searchQueryReducer from "@redux-reducers/search-query";
+import userListReducer from "@redux-reducers/user-list";
+import userDataReducer from "@redux-reducers/user-data";
+import repoListReducer from "@redux-reducers/repo-list";
 
 export const store = configureStore({
   reducer: {
@@ -13,10 +13,10 @@ export const store = configureStore({
   },
 });
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
   unknown,
   Action<string>
->
+>;

@@ -1,3 +1,3 @@
-import StylesGlobal from './StylesGlobal'
+import StylesGlobal from "./StylesGlobal";
 
-export default StylesGlobal
+export default StylesGlobal;

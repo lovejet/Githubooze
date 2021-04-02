@@ -1,24 +1,30 @@
-import { ChangeEvent, memo } from 'react'
-import PropTypes, { InferProps } from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, memo } from "react";
+import PropTypes, { InferProps } from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
 
-import { makeStyles } from '@material-ui/core'
-import { Pagination, PaginationItem } from '@material-ui/lab'
+import { makeStyles } from "@material-ui/core";
+import { Pagination, PaginationItem } from "@material-ui/lab";
 
-import { color } from '@helpers/styles'
+import { color } from "@helpers/styles";
 
-import { selectSearchQuery, setCurrentPage } from '@redux-reducers/search-query'
-import { selectRepoList, setCurrentPageOfRepo } from '@redux-reducers/repo-list'
+import {
+  selectSearchQuery,
+  setCurrentPage,
+} from "@redux-reducers/search-query";
+import {
+  selectRepoList,
+  setCurrentPageOfRepo,
+} from "@redux-reducers/repo-list";
 
-import { PaginationContainer } from './CustomPagination.styled'
-import { toVW } from '@helpers/methods'
-import { useStateScreenMobile } from '@helpers/hooks'
+import { PaginationContainer } from "./CustomPagination.styled";
+import { toVW } from "@helpers/methods";
+import { useStateScreenMobile } from "@helpers/hooks";
 
 const useStyles = makeStyles((theme) => ({
   ul: {
     "& .MuiPaginationItem-root": {
       color: color.text.light,
-      font: 'inherit',
+      font: "inherit",
       fontSize: 18,
     },
     "& .Mui-selected": {
@@ -28,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
   ulMobile: {
     "& .MuiPaginationItem-root": {
       color: color.text.light,
-      font: 'inherit',
+      font: "inherit",
       fontSize: 18,
-      width: toVW(20, 'mobile'),
+      width: toVW(20, "mobile"),
     },
     "& .Mui-selected": {
       color: color.bg.secondary,
@@ -39,36 +45,46 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
-function CustomPagination ({ pages, type }: InferProps<typeof CustomPagination.propTypes>) {
-  const classes = useStyles()
-  const dispatch = useDispatch()
-  const searchQuery = useSelector(selectSearchQuery)
-  const repoList = useSelector(selectRepoList)
+function CustomPagination({
+  pages,
+  type,
+}: InferProps<typeof CustomPagination.propTypes>) {
+  const classes = useStyles();
+  const dispatch = useDispatch();
+  const searchQuery = useSelector(selectSearchQuery);
+  const repoList = useSelector(selectRepoList);
 
   const onChange = (event: ChangeEvent<unknown>, value: number) => {
-    if (type === 'users') dispatch(setCurrentPage(value))
-    else dispatch(setCurrentPageOfRepo(value))
-  }
+    if (type === "users") dispatch(setCurrentPage(value));
+    else dispatch(setCurrentPageOfRepo(value));
+  };
 
   return (
     <PaginationContainer>
       <Pagination
-        classes={{ul: !useStateScreenMobile() ? classes.ul : classes.ulMobile}}
+        classes={{
+          ul: !useStateScreenMobile() ? classes.ul : classes.ulMobile,
+        }}
         count={pages}
-        page={type === 'users' ? searchQuery.currentPage : repoList.current_page}
-        onChange={onChange} 
-        renderItem={(item)=> <PaginationItem {...item} classes={{selected:classes.selected}} />} />
+        page={
+          type === "users" ? searchQuery.currentPage : repoList.current_page
+        }
+        onChange={onChange}
+        renderItem={(item) => (
+          <PaginationItem {...item} classes={{ selected: classes.selected }} />
+        )}
+      />
     </PaginationContainer>
-  )
+  );
 }
 
 CustomPagination.propTypes = {
   pages: PropTypes.number.isRequired,
   type: PropTypes.string,
-}
+};
 
 CustomPagination.defaultProps = {
-  type: 'users',
-}
+  type: "users",
+};
 
-export default memo(CustomPagination)
+export default memo(CustomPagination);

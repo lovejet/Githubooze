@@ -1,3 +1,3 @@
-import GithubUsersList from './GithubUsersList'
+import GithubUsersList from "./GithubUsersList";
 
-export default GithubUsersList
+export default GithubUsersList;

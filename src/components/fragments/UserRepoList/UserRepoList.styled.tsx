@@ -1,16 +1,16 @@
-import styled from 'styled-components'
-import { toVW } from '@helpers/methods'
-import { screenMax, screenMin } from '@helpers/styles'
+import styled from "styled-components";
+import { toVW } from "@helpers/methods";
+import { screenMax, screenMin } from "@helpers/styles";
 
 const UserRepoListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100% - ${toVW(50, 'desktop')});
+  height: calc(100% - ${toVW(50, "desktop")});
 
-  ${screenMax('lg')} {
+  ${screenMax("lg")} {
     height: 100%;
   }
-`
+`;
 
 const ListContainer = styled.div`
   display: flex;
@@ -20,10 +20,10 @@ const ListContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  ${screenMin('lg')} {
+  ${screenMin("lg")} {
     overflow-x: hidden;
     overflow-y: auto;
   }
-`
+`;
 
-export { UserRepoListContainer, ListContainer }
+export { UserRepoListContainer, ListContainer };

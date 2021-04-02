@@ -1,5 +1,10 @@
 export const CopyRightSymbol = (props: any) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 367.467 367.467" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 367.467 367.467"
+    {...props}
+  >
     <path
       fill="var(--illustration-accent-4)"
       d="M183.73,0.018C82.427,0.018,0,82.404,0,183.733c0,101.289,82.427,183.716,183.73,183.716
@@ -16,4 +21,4 @@ export const CopyRightSymbol = (props: any) => (
         l2.658-7.133h-44.28L244.036,217.014z"
     />
   </svg>
-)
+);

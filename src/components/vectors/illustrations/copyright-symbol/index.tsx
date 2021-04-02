@@ -1,1 +1,1 @@
-export { CopyRightSymbol } from './copyright-symbol'
+export { CopyRightSymbol } from "./copyright-symbol";

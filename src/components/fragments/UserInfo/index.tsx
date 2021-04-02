@@ -1,3 +1,3 @@
-import UserInfo from './UserInfo'
+import UserInfo from "./UserInfo";
 
-export default UserInfo
+export default UserInfo;

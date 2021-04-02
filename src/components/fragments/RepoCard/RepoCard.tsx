@@ -1,9 +1,9 @@
-import { memo } from 'react'
+import { memo } from "react";
 
-import { INTERFACE_REPO } from '@helpers/types'
-import StarIcon from '@material-ui/icons/Star'
-import ForkIcon from '@material-ui/icons/CallSplit'
-import WatchIcon from '@material-ui/icons/Visibility'
+import { INTERFACE_REPO } from "@helpers/types";
+import StarIcon from "@material-ui/icons/Star";
+import ForkIcon from "@material-ui/icons/CallSplit";
+import WatchIcon from "@material-ui/icons/Visibility";
 
 import {
   RepoCardContainer,
@@ -12,13 +12,16 @@ import {
   InfoPane,
   CountPane,
   LargeField,
-  LargeFieldText
-} from './RepoCard.styled'
+  LargeFieldText,
+} from "./RepoCard.styled";
 
-const RepoCard = ({ repo }: { repo: INTERFACE_REPO}) => {
+const RepoCard = ({ repo }: { repo: INTERFACE_REPO }) => {
   const renderLargeField = (icon: React.ReactNode, text: React.ReactNode) => (
-    <LargeField>{icon}<LargeFieldText>{text}</LargeFieldText></LargeField>
-  )
+    <LargeField>
+      {icon}
+      <LargeFieldText>{text}</LargeFieldText>
+    </LargeField>
+  );
 
   return (
     <RepoCardContainer>
@@ -27,21 +30,12 @@ const RepoCard = ({ repo }: { repo: INTERFACE_REPO}) => {
         <RepoDescription>{repo.description}</RepoDescription>
       </InfoPane>
       <CountPane>
-        {renderLargeField(
-          <StarIcon />,
-          `${repo.stargazers_count}`
-        )}
-        {renderLargeField(
-          <ForkIcon />,
-          `${repo.forks_count}`
-        )}
-        {renderLargeField(
-          <WatchIcon />,
-          `${repo.watchers_count}`
-        )}
+        {renderLargeField(<StarIcon />, `${repo.stargazers_count}`)}
+        {renderLargeField(<ForkIcon />, `${repo.forks_count}`)}
+        {renderLargeField(<WatchIcon />, `${repo.watchers_count}`)}
       </CountPane>
     </RepoCardContainer>
-  )
-}
+  );
+};
 
-export default memo(RepoCard)
+export default memo(RepoCard);

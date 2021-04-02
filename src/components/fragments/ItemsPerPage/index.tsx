@@ -1,3 +1,3 @@
-import ItemsPerPage from './ItemsPerPage'
+import ItemsPerPage from "./ItemsPerPage";
 
-export default ItemsPerPage
+export default ItemsPerPage;

@@ -1,3 +1,3 @@
-import SortOptionsBox from './SortOptionsBox'
+import SortOptionsBox from "./SortOptionsBox";
 
-export default SortOptionsBox
+export default SortOptionsBox;

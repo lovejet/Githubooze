@@ -1,5 +1,5 @@
-import React, { memo } from 'react'
-import { Fonts, Normalize, Default } from './StylesGlobal.styled'
+import React, { memo } from "react";
+import { Fonts, Normalize, Default } from "./StylesGlobal.styled";
 
 const GlobalStyles = () => (
   <>
@@ -7,6 +7,6 @@ const GlobalStyles = () => (
     <Normalize />
     <Default />
   </>
-)
+);
 
-export default memo(GlobalStyles)
+export default memo(GlobalStyles);

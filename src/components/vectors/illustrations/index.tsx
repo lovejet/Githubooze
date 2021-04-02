@@ -1,1 +1,1 @@
-export * from './copyright-symbol'
+export * from "./copyright-symbol";

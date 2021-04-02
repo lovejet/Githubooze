@@ -1,1 +1,1 @@
-export * from './useStateScreenMobile'
+export * from "./useStateScreenMobile";

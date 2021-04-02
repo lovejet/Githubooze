@@ -1,3 +1,3 @@
-import GithubUserCard from './GithubUserCard'
+import GithubUserCard from "./GithubUserCard";
 
-export default GithubUserCard
+export default GithubUserCard;

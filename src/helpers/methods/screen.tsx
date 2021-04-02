@@ -7,8 +7,8 @@
 const BASE_SCREEN_SIZE: { [key: string]: number } = Object.freeze({
   desktop: 1440,
   mobile: 360,
-})
-const SCREEN_SIZES = Object.keys(BASE_SCREEN_SIZE)
+});
+const SCREEN_SIZES = Object.keys(BASE_SCREEN_SIZE);
 
 const isValidScreenType = (screenType: string) => {
   if (!SCREEN_SIZES.includes(screenType))
@@ -16,9 +16,9 @@ const isValidScreenType = (screenType: string) => {
       `The @param screenSize can only have the following values: ${Object.keys(
         BASE_SCREEN_SIZE
       )}. Value received: ${screenType}`
-    )
-}
+    );
+};
 
-const getScreenTypeSize = (screenType: string) => BASE_SCREEN_SIZE[screenType]
+const getScreenTypeSize = (screenType: string) => BASE_SCREEN_SIZE[screenType];
 
-export { isValidScreenType, getScreenTypeSize }
+export { isValidScreenType, getScreenTypeSize };

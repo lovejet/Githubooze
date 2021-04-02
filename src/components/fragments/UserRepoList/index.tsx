@@ -1,3 +1,3 @@
-import UserRepoList from './UserRepoList'
+import UserRepoList from "./UserRepoList";
 
-export default UserRepoList
+export default UserRepoList;

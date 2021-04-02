@@ -1,6 +1,6 @@
-import { toVW } from '@helpers/methods'
+import { toVW } from "@helpers/methods";
 
-const SPACER_BASE = 8 // the designs use this value as base unit
+const SPACER_BASE = 8; // the designs use this value as base unit
 
 /**
  * spaceBase - helper method to create a valid spacing base required to
@@ -11,13 +11,17 @@ const SPACER_BASE = 8 // the designs use this value as base unit
  */
 
 const spaceBase = (multiplier: number) => {
-  const isValidValue = multiplier % 1 === 0 || multiplier % 0.5 === 0
+  const isValidValue = multiplier % 1 === 0 || multiplier % 0.5 === 0;
 
-  if (!isValidValue) throw new Error('The spacer helper input is wrong. Please use halves or fulls: 0.5, 1, 2')
-  return multiplier * SPACER_BASE
-}
+  if (!isValidValue)
+    throw new Error(
+      "The spacer helper input is wrong. Please use halves or fulls: 0.5, 1, 2"
+    );
+  return multiplier * SPACER_BASE;
+};
 
-const spaceVW = (multiplier: number, screenType: string) => toVW(spaceBase(multiplier), screenType)
+const spaceVW = (multiplier: number, screenType: string) =>
+  toVW(spaceBase(multiplier), screenType);
 
 /**
  * spaceMb & spaceDt - helper methods designed to return a proper, scallable (VW based) space amount
@@ -53,13 +57,13 @@ const spaceVW = (multiplier: number, screenType: string) => toVW(spaceBase(multi
  * @param {number} - only halves and full numbers: 0.5, 1, 1.5, 13.5 ...
  * @returns {string} - VW value ready for in-CSS usage
  */
-const spaceMb = (multiplier: number) => spaceVW(multiplier, 'mobile')
+const spaceMb = (multiplier: number) => spaceVW(multiplier, "mobile");
 
 /**
  * spaceDt - returns VW values for desktop screens (see screen.js more more details on pixel size used for calc.)
  * @param {number} - only halves and full numbers: 0.5, 1, 1.5, 13.5 ...
  * @returns {string} - VW value ready for in-CSS usage
  */
-const spaceDt = (multiplier: number) => spaceVW(multiplier, 'desktop')
+const spaceDt = (multiplier: number) => spaceVW(multiplier, "desktop");
 
-export { spaceMb, spaceDt }
+export { spaceMb, spaceDt };

@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import { getTypography, spaceDt, spaceMb, color } from '@helpers/styles'
-import fontRegularWoff from '@fonts/GT-Haptik-Regular.woff'
-import fontRegularWoff2 from '@fonts/GT-Haptik-Regular.woff2'
+import { createGlobalStyle } from "styled-components";
+import { getTypography, spaceDt, spaceMb, color } from "@helpers/styles";
+import fontRegularWoff from "@fonts/GT-Haptik-Regular.woff";
+import fontRegularWoff2 from "@fonts/GT-Haptik-Regular.woff2";
 
 const Fonts = createGlobalStyle`
   @font-face {
@@ -12,7 +12,7 @@ const Fonts = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
   }
-`
+`;
 
 /**
  * Normalize component. One that applies shared,
@@ -638,7 +638,7 @@ const Normalize = createGlobalStyle`
       font-size: 100%;
     }
   }
-`
+`;
 
 const Default = createGlobalStyle`
   :root {
@@ -664,7 +664,7 @@ const Default = createGlobalStyle`
   }
 
   body {
-    ${getTypography('body-2')}
+    ${getTypography("body-2")}
 
     * {
       font-family: inherit;
@@ -677,6 +677,6 @@ const Default = createGlobalStyle`
   .no-scroll {
     overflow: hidden;
   }
-`
+`;
 
-export { Normalize, Fonts, Default }
+export { Normalize, Fonts, Default };

@@ -1,14 +1,14 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@helpers/*": ["./src/helpers/*"],
-        "@components/*": ["./src/components/fragments/*"],
-        "@constants": ["./src/constants"],
-        "@illustrations": ["./src/components/vectors/illustrations"],
-        "@fonts/*": ["./src/fonts/*"],
-        "@redux-store": ["./src/redux/store"],
-        "@redux-reducers/*": ["./src/redux/reducers/*"],
-      }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@helpers/*": ["./src/helpers/*"],
+      "@components/*": ["./src/components/fragments/*"],
+      "@constants": ["./src/constants"],
+      "@illustrations": ["./src/components/vectors/illustrations"],
+      "@fonts/*": ["./src/fonts/*"],
+      "@redux-store": ["./src/redux/store"],
+      "@redux-reducers/*": ["./src/redux/reducers/*"]
     }
   }
+}

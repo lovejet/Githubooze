@@ -1,3 +1,3 @@
-import NoResult from './NoResult'
+import NoResult from "./NoResult";
 
-export default NoResult
+export default NoResult;
