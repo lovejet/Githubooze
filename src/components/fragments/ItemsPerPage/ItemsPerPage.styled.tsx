@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
-import { color, getTypography, spaceDt } from '@helpers/styles'
+import { color, getTypography, screenMax, spaceDt, spaceMb } from '@helpers/styles'
 
 const ItemsPerPageBoxContainer = styled.div`
   display: flex;
@@ -9,6 +9,11 @@ const ItemsPerPageBoxContainer = styled.div`
   height: ${toVW(50, 'desktop')};
 
   color: ${color.text.light};
+
+  ${screenMax('lg')} {
+    width: 100%;
+    height: ${toVW(50, 'mobile')};
+  }
 `
 
 const CustomSelectRender = styled.div`
@@ -21,6 +26,10 @@ const CustomSelectRender = styled.div`
 const CustomSelectRenderPrefix = styled.div`
   color: ${color.text.primary};
   margin-right: ${spaceDt(1)};
+
+  ${screenMax('lg')} {
+    margin-right: ${spaceMb(1)};
+  }
 `
 
 export { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }

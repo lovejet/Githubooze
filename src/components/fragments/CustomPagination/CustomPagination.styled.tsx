@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
-import { color } from '@helpers/styles'
+import { color, screenMax } from '@helpers/styles'
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -9,6 +9,12 @@ const PaginationContainer = styled.div`
   height: ${toVW(50, 'desktop')};
 
   color: ${color.text.light};
+
+  ${screenMax('lg')} {
+    width: 100%;
+    justify-content: center;
+    height: ${toVW(50, 'mobile')};
+  }
 `
 
 export { PaginationContainer }

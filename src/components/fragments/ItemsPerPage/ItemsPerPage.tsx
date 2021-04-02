@@ -12,11 +12,17 @@ import { toVW } from '@helpers/methods'
 import { selectSearchQuery, setCurrentPage, setItemsPerPage } from '@redux-reducers/search-query'
 
 import { ItemsPerPageBoxContainer, CustomSelectRender, CustomSelectRenderPrefix } from './ItemsPerPage.styled'
+import { useStateScreenMobile } from '@helpers/hooks'
 
 const useStyles = makeStyles((theme) => ({
   select: {
     color: color.bg.light,
     height: toVW(50, 'desktop'),
+  },
+  selectMobile: {
+    color: color.bg.light,
+    width: '100%',
+    height: toVW(50, 'mobile'),
   },
   icon: {
     fill: color.bg.light,
@@ -63,7 +69,7 @@ const ItemsPerPage = () => {
       <Select
         value={searchQuery.itemsPerPage}
         onChange={onChange}
-        className={classes.select}
+        className={!useStateScreenMobile() ? classes.select : classes.selectMobile}
         variant="outlined"
         input={
           <OutlinedInput

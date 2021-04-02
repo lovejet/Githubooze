@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { toVW } from '@helpers/methods'
-import { color, getTypography, spaceDt } from '@helpers/styles'
+import { color, getTypography, screenMax, spaceDt } from '@helpers/styles'
 
 import { withStyles } from '@material-ui/core/styles'
 import { InputBase } from '@material-ui/core'
@@ -15,6 +15,12 @@ const SearchBoxContainer = styled.div`
 
   color: ${color.text.light};
   ${getTypography('body-2')};
+
+  ${screenMax('lg')} {
+    height: ${toVW(50, 'mobile')};
+    width: 100%;
+    min-width: 100%;
+  }
 `
 
 const CustomInput = withStyles({

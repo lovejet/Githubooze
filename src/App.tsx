@@ -1,6 +1,6 @@
 import './App.css'
 import styled from 'styled-components'
-import { color, spaceDt } from '@helpers/styles'
+import { color, screenMax, spaceDt, spaceMb } from '@helpers/styles'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import StylesGlobal from '@components/StylesGlobal'
@@ -22,6 +22,11 @@ const BodyContainer = styled.div`
   color: ${color.text.light};
   background-color: ${color.bg.black};
   padding: ${spaceDt(2)} ${spaceDt(3)};
+
+  ${screenMax('lg')} {
+    height: calc(100% - ${toVW(70, 'mobile')});
+    padding: ${spaceMb(2)} ${spaceMb(1)};
+  }
 `
 
 function App() {

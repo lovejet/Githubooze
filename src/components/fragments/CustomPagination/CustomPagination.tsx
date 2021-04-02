@@ -11,6 +11,8 @@ import { selectSearchQuery, setCurrentPage } from '@redux-reducers/search-query'
 import { selectRepoList, setCurrentPageOfRepo } from '@redux-reducers/repo-list'
 
 import { PaginationContainer } from './CustomPagination.styled'
+import { toVW } from '@helpers/methods'
+import { useStateScreenMobile } from '@helpers/hooks'
 
 const useStyles = makeStyles((theme) => ({
   ul: {
@@ -18,6 +20,17 @@ const useStyles = makeStyles((theme) => ({
       color: color.text.light,
       font: 'inherit',
       fontSize: 18,
+    },
+    "& .Mui-selected": {
+      color: color.bg.secondary,
+    },
+  },
+  ulMobile: {
+    "& .MuiPaginationItem-root": {
+      color: color.text.light,
+      font: 'inherit',
+      fontSize: 18,
+      width: toVW(20, 'mobile'),
     },
     "& .Mui-selected": {
       color: color.bg.secondary,
@@ -40,7 +53,7 @@ function CustomPagination ({ pages, type }: InferProps<typeof CustomPagination.p
   return (
     <PaginationContainer>
       <Pagination
-        classes={{ul: classes.ul}}
+        classes={{ul: !useStateScreenMobile() ? classes.ul : classes.ulMobile}}
         count={pages}
         page={type === 'users' ? searchQuery.currentPage : repoList.current_page}
         onChange={onChange} 

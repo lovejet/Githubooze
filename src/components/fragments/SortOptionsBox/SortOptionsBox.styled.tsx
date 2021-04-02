@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { toVW } from '@helpers/methods'
-import { color, getTypography, spaceDt } from '@helpers/styles'
+import { color, getTypography, screenMax, spaceDt, spaceMb } from '@helpers/styles'
 
 const SortOptionsBoxContainer = styled.div`
   display: flex;
@@ -11,6 +11,12 @@ const SortOptionsBoxContainer = styled.div`
   min-width: 35%;
 
   color: ${color.text.light};
+
+  ${screenMax('lg')} {
+    height: ${toVW(50, 'mobile')};
+    width: 100%;
+    min-width: 100%;
+  }
 `
 
 const CustomSelectRender = styled.div`
@@ -23,6 +29,10 @@ const CustomSelectRender = styled.div`
 const CustomSelectRenderPrefix = styled.div`
   color: ${color.text.primary};
   margin-right: ${spaceDt(1)};
+
+  ${screenMax('lg')} {
+    margin-right: ${spaceMb(1)};
+  }
 `
 
 export { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }

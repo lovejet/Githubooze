@@ -5,6 +5,7 @@ import { SORT_OPTIONS } from '@constants'
 
 import { color } from '@helpers/styles'
 import { toVW } from '@helpers/methods'
+import { useStateScreenMobile } from '@helpers/hooks'
 import { INTERFACE_SORT_OPTIONS } from '@helpers/types'
 
 import CheckIcon from '@material-ui/icons/Check'
@@ -17,6 +18,11 @@ import { SortOptionsBoxContainer, CustomSelectRender, CustomSelectRenderPrefix }
 const useStyles = makeStyles((theme) => ({
   select: {
     height: toVW(50, 'desktop'),
+    color: color.bg.light,
+  },
+  selectMobile: {
+    width: '100%',
+    height: toVW(50, 'mobile'),
     color: color.bg.light,
   },
   icon: {
@@ -66,7 +72,7 @@ const SortOptionsBox = () => {
       <Select
         value={sortOptionsIndex}
         onChange={onChange}
-        className={classes.select}
+        className={!useStateScreenMobile() ? classes.select : classes.selectMobile}
         variant="outlined"
         input={
           <OutlinedInput

@@ -137,8 +137,8 @@ const UserInfo = () => {
 
   return (
     <UserInfoContainer>
-      <BackButtonContainer onClick={onClickBack}>
-        <BackButtonIcon />
+      <BackButtonContainer >
+        <BackButtonIcon onClick={onClickBack} />
       </BackButtonContainer>
       {renderChild()}
     </UserInfoContainer>
