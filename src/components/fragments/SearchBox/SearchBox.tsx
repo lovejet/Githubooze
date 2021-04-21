@@ -1,9 +1,10 @@
-import { ChangeEvent, KeyboardEvent, memo, useState } from "react";
+import { ChangeEvent, memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import SearchIcon from "@material-ui/icons/Search";
 import { makeStyles } from "@material-ui/core/styles";
 
+import { useDebounce } from "@helpers/hooks";
 import { color } from "@helpers/styles";
 
 import {
@@ -29,6 +30,10 @@ const SearchBox = () => {
   const [isActive, setActive] = useState(false);
   const classes = useStyles();
   const dispatch = useDispatch();
+  const debouncedSetText = useDebounce((nextValue: string) => {
+    dispatch(setCurrentPage(1));
+    dispatch(setQuery(nextValue));
+  }, 1000);
 
   const onBlur = () => {
     setActive(false);
@@ -40,13 +45,7 @@ const SearchBox = () => {
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
-  };
-
-  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      dispatch(setCurrentPage(1));
-      dispatch(setQuery(text));
-    }
+    debouncedSetText(event.target.value);
   };
 
   return (
@@ -60,7 +59,6 @@ const SearchBox = () => {
         onBlur={onBlur}
         onClick={onClick}
         onChange={onChange}
-        onKeyDown={onKeyDown}
       />
     </SearchBoxContainer>
   );
