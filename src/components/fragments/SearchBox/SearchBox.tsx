@@ -1,10 +1,10 @@
 import { ChangeEvent, memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useDebouncedCallback } from "use-debounce";
 
 import SearchIcon from "@material-ui/icons/Search";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { useDebounce } from "@helpers/hooks";
 import { color } from "@helpers/styles";
 
 import {
@@ -30,7 +30,7 @@ const SearchBox = () => {
   const [isActive, setActive] = useState(false);
   const classes = useStyles();
   const dispatch = useDispatch();
-  const debouncedSetText = useDebounce((nextValue: string) => {
+  const debouncedSetText = useDebouncedCallback((nextValue: string) => {
     dispatch(setCurrentPage(1));
     dispatch(setQuery(nextValue));
   }, 1000);
